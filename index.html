@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a0a">
+<title>Nicole De Min — UX/UI & Web Designer, Berlin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#0a0a0a}
+:root{
+  --bk:#0a0a0a;--wh:#f4f3ef;--g1:#141414;--g2:#222;--g3:#6e6e6e;--g4:#b0aea8;
+  --bl:#005aff;--fd:'Bebas Neue',sans-serif;--fb:'DM Sans',sans-serif;--fm:'Plus Jakarta Sans',sans-serif;
+}
+body{background:var(--bk);color:var(--wh);font-family:var(--fb);font-weight:300;line-height:1.6;overflow-x:hidden;cursor:none}
+::selection{background:var(--bl);color:var(--wh)}
+::-webkit-scrollbar{width:2px}::-webkit-scrollbar-track{background:var(--bk)}::-webkit-scrollbar-thumb{background:var(--bl)}
+.lbl{font-family:var(--fm);font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--g3)}
+.bmd{font-size:.97rem;font-weight:300;line-height:1.74;color:var(--g4)}
+.bsm{font-size:.85rem;font-weight:300;line-height:1.68;color:var(--g3)}
+.dxl{font-family:var(--fd);font-size:clamp(3.5rem,9vw,10rem);line-height:.9}
+.dlg{font-family:var(--fd);font-size:clamp(2.4rem,5.5vw,5.5rem);line-height:.93}
+.dmd{font-family:var(--fd);font-size:clamp(1.6rem,3vw,3rem);line-height:1}
+.dsm{font-family:var(--fd);font-size:clamp(1.3rem,2.3vw,2rem);line-height:1}
+.cnt{max-width:1300px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
+nav.sc{background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-color:var(--g2)}
+#nav-mobile{display:none}
+#nav-burger{display:none}
+@media(min-width:769px){#nav-burger{display:none!important}#nav-mobile{display:none!important}}
+.nlogo{font-family:var(--fm);font-size:.74rem;font-weight:600;letter-spacing:.06em;color:var(--wh);text-decoration:none;text-transform:uppercase;cursor:none}
+.nlogo span{color:var(--bl)}
+.nlinks{display:flex;gap:2.5rem;list-style:none}
+.nlinks a{font-family:var(--fm);font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--g3);text-decoration:none;position:relative;transition:color .2s;cursor:none}
+.nlinks a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--bl);transition:width .25s}
+.nlinks a:hover{color:var(--wh)}.nlinks a:hover::after{width:100%}
+.page{display:none}.page.on{display:block}
+.cs{display:none}.cs.on{display:block}
+.pt{position:fixed;inset:0;background:var(--bk);z-index:500;pointer-events:none;opacity:0;transition:opacity .22s}
+.pt.on{opacity:1;pointer-events:all}
+.btn{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--fm);font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:.9rem 1.8rem;border:1px solid var(--g2);color:var(--wh);position:relative;overflow:hidden;background:transparent;cursor:none;border-radius:99px}
+.btn::before{content:'';position:absolute;inset:0;background:var(--bl);transform:translateX(-101%);transition:transform .34s cubic-bezier(.76,0,.24,1)}
+.btn:hover::before{transform:translateX(0)}.btn:hover{border-color:var(--bl)}
+.btn span,.btn svg{position:relative;z-index:1}
+.btnp{border-color:var(--bl);background:var(--bl)}.btnp::before{background:var(--wh)}.btnp:hover{color:var(--bk)}
+.ico{width:12px;height:12px;flex-shrink:0}
+#home-s{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(1.5rem,4vw,4rem);padding-top:7rem;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,90,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(0,90,255,.028) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;mask-image:linear-gradient(to bottom,transparent,black 25%,black 65%,transparent)}
+.htitle{font-family:var(--fd);font-size:clamp(3.8rem,9.5vw,11rem);line-height:.88;letter-spacing:-.02em;color:var(--wh);display:block}
+.houtline{font-family:var(--fd);font-size:clamp(3.8rem,9.5vw,11rem);line-height:.88;letter-spacing:-.02em;display:block;color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.13)}
+.hbot{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--g2);display:flex;flex-direction:column;align-items:flex-start;gap:1.5rem;max-width:680px}
+.sh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid var(--g2)}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.pcard{background:var(--g1);border:1px solid var(--g2);cursor:none;display:flex;flex-direction:column;transition:background .3s,border-color .3s;text-decoration:none;color:inherit;border-radius:16px;overflow:hidden}
+.pcard:hover{background:#1a1a1a;border-color:var(--g3)}
+.pimg{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--g2);overflow:hidden;position:relative;background:var(--g1)}
+.pinfo{padding:1.75rem 2rem 2rem;display:flex;flex-direction:column;gap:1rem;flex:1}
+.ptop{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.ptitle{font-family:var(--fd);font-size:clamp(1.4rem,2.6vw,2rem);letter-spacing:.02em;line-height:1;color:var(--wh)}
+.parr{flex-shrink:0;width:36px;height:36px;border:1px solid var(--g2);display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .25s;border-radius:10px}
+.pcard:hover .parr{background:var(--bl);border-color:var(--bl);transform:rotate(45deg) scale(1.05)}
+.pdesc{font-size:.85rem;color:var(--g3);line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto}
+.tag{font-family:var(--fm);font-size:.54rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--g3);border:1px solid var(--g2);padding:.28rem .7rem;border-radius:99px}
+.tag.bl{border-color:rgba(0,90,255,.3);color:var(--bl)}
+.pcard:hover .tag{border-color:var(--g3);color:var(--g4)}
+.tstrip{padding:3.5rem 0;border-top:1px solid var(--g2);border-bottom:1px solid var(--g2);overflow:hidden}
+.ticker{display:flex;align-items:center;gap:2rem;white-space:nowrap;animation:tick 30s linear infinite;width:max-content}
+.ticker span{font-family:var(--fm);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3)}
+.ticker .dot{color:var(--bl)!important;font-size:1rem!important}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.explist{display:flex;flex-direction:column}
+.expitem{display:grid;grid-template-columns:220px 1fr auto;gap:3rem;align-items:start;padding:2.5rem 0;border-bottom:1px solid var(--g2)}
+.expc{font-family:var(--fd);font-size:clamp(1.3rem,2vw,1.75rem);color:var(--wh);line-height:1}
+.expy{font-family:var(--fm);font-size:.6rem;color:var(--g3);letter-spacing:.1em;margin-top:.5rem}
+.expr{font-family:var(--fm);font-size:.62rem;letter-spacing:.08em;color:var(--bl);text-transform:uppercase;margin-bottom:.65rem}
+.expd{font-size:.87rem;color:var(--g3);line-height:1.72;max-width:500px}
+.exptags{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-left{position:sticky;top:7rem}
+.abt{font-family:var(--fd);font-size:clamp(4rem,8vw,9rem);line-height:.88;letter-spacing:-.01em;display:block}
+.abo{font-family:var(--fd);font-size:clamp(4rem,8vw,9rem);line-height:.88;letter-spacing:-.01em;display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.12)}
+.ablocks{display:flex;flex-direction:column;gap:2.5rem}
+.ablbl{font-family:var(--fm);font-size:.7rem;color:var(--bl);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.65rem}
+.abtext{font-size:.95rem;color:var(--g4);line-height:1.76}
+.avlist{border:1px solid var(--g2);margin-top:.75rem;border-radius:12px;overflow:hidden}
+.av{padding:.9rem 1.2rem;border-bottom:1px solid var(--g2);display:flex;gap:.85rem;align-items:center;transition:background .2s}
+.av:last-child{border-bottom:0}.av:hover{background:var(--g1)}
+.avdot{width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0}
+.avtxt{font-family:var(--fm);font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:var(--g4)}
+.aibadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fm);font-size:.6rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--bl);border:1px solid rgba(0,90,255,.25);padding:.4rem .85rem;background:rgba(0,90,255,.06);margin-bottom:.85rem;border-radius:99px}
+.ctwrap{min-height:72vh;display:flex;flex-direction:column;justify-content:center}
+.ctlinks{display:flex;flex-direction:column;border:1px solid var(--g2);max-width:620px;border-radius:16px;overflow:hidden}
+.cli{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 2rem;border-bottom:1px solid var(--g2);text-decoration:none;transition:background .25s;position:relative;overflow:hidden;cursor:none}
+.cli:last-child{border-bottom:0}
+.cli::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--bl);transform:scaleY(0);transition:transform .25s;transform-origin:bottom}
+.cli:hover{background:var(--g1)}.cli:hover::before{transform:scaleY(1)}
+.clip{font-family:var(--fm);font-size:.6rem;color:var(--g3);letter-spacing:.14em;text-transform:uppercase}
+.cliv{font-family:var(--fd);font-size:clamp(1.3rem,2.4vw,2.2rem);color:var(--wh);letter-spacing:.02em;line-height:1;margin-top:.25rem}
+.cliark{width:42px;height:42px;border:1px solid var(--g2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s,border-color .25s,transform .25s;border-radius:12px}
+.cli:hover .cliark{background:var(--bl);border-color:var(--bl);transform:rotate(45deg)}
+.csback{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--fm);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3);text-decoration:none;margin-bottom:2rem;transition:color .2s;cursor:none}
+.csback:hover{color:var(--wh)}
+.cshero{padding-top:7rem;padding-bottom:clamp(2rem,5vw,5rem);border-bottom:1px solid var(--g2)}
+.cseyebrow{font-family:var(--fm);font-size:.7rem;color:var(--bl);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4rem;display:flex;align-items:center;gap:1rem}
+.cseyebrow::before{content:'';display:inline-block;width:20px;height:1px;background:var(--bl)}
+.cspos{font-size:1rem;color:var(--g4);max-width:520px;margin-bottom:2.5rem;line-height:1.68}
+.csmeta{display:flex;gap:3rem;padding:1.5rem 0;border-top:1px solid var(--g2);flex-wrap:wrap}
+.csml{font-family:var(--fm);font-size:.56rem;color:var(--g3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.38rem}
+.csmv{font-size:.87rem;color:var(--wh)}
+.cssec{padding:3rem 0;border-bottom:1px solid var(--g2)}
+.cssec:last-child{border-bottom:0;padding-bottom:6rem}
+.cssl{font-family:var(--fm);font-size:.68rem;color:var(--bl);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.1rem}
+.csst{font-family:var(--fd);font-size:clamp(1.5rem,2.5vw,2.2rem);color:var(--wh);margin-bottom:1.2rem;line-height:1}
+.cs2{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.cs3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem}
+.pb{border:1px solid var(--g2);padding:1.4rem;border-radius:10px}
+.db{border-left:2px solid var(--g2);padding-left:1.4rem;margin:1.5rem 0}
+.db p{font-size:.875rem;color:var(--g4);line-height:1.72}
+.flow{display:flex;align-items:flex-start;flex-wrap:wrap;padding:1.5rem 0;row-gap:1.5rem}
+.fnode{display:flex;flex-direction:column;align-items:center;gap:.4rem;flex-shrink:0}
+.fbox{padding:.55rem .95rem;border:1px solid var(--g2);background:var(--g1);min-width:100px;min-height:52px;text-align:center;display:flex;flex-direction:column;justify-content:center;border-radius:8px}
+.fbt{font-family:var(--fm);font-size:.52rem;letter-spacing:.09em;text-transform:uppercase;color:var(--wh);line-height:1.4}
+.fbs{font-family:var(--fm);font-size:.44rem;letter-spacing:.07em;color:var(--g3);margin-top:.14rem;line-height:1.4}
+.farr{padding:0 .4rem;color:var(--g3);font-size:.85rem;flex-shrink:0;align-self:center}
+.flbl{font-family:var(--fm);font-size:.44rem;color:var(--g3);letter-spacing:.07em;text-align:center;margin-top:.14rem;max-width:100px;line-height:1.4}
+.jtbl{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.jtbl th{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);padding:.65rem 1rem;text-align:left;border-bottom:1px solid var(--g2);background:var(--g1)}
+.jtbl td{padding:.85rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;font-size:.85rem;color:var(--g4);line-height:1.6}
+.jtbl .stg{font-family:var(--fm);font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;color:var(--wh)}
+.persona-cards{display:flex;flex-direction:column;gap:1.5rem;margin-top:1.5rem}
+.persona-card{border:1px solid var(--g2);background:var(--g1);padding:1.75rem 2rem;border-radius:16px}
+.persona-head{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--g2)}
+.persona-avatar{width:56px;height:56px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1px solid var(--g2)}
+.persona-avatar svg{width:100%;height:100%;display:block}
+.persona-meta{display:flex;flex-direction:column;gap:.3rem}
+.persona-name{font-family:var(--fd);font-size:1.3rem;color:var(--wh);line-height:1;letter-spacing:.02em}
+.persona-role{font-family:var(--fm);font-size:.58rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase}
+.persona-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem}
+.nav-screen-thumb{cursor:pointer}
+.nav-screen-img-wrap{position:relative;border:1px solid var(--g2);border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s}
+.nav-screen-thumb:hover .nav-screen-img-wrap{border-color:var(--bl);transform:translateY(-2px)}
+.nav-screen-img-wrap img{width:100%;display:block}
+.nav-screen-overlay{position:absolute;inset:0;background:rgba(0,90,255,0);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s,background .2s}
+.nav-screen-thumb:hover .nav-screen-overlay{opacity:1;background:rgba(0,90,255,.18)}
+.nav-screen-label{font-family:var(--fm);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3);text-align:center;margin-top:.55rem;transition:color .2s}
+.nav-screen-thumb:hover .nav-screen-label{color:var(--bl)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(8px)}
+#lb.open{opacity:1;pointer-events:all}
+#lb-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.8)}
+#lb-caption{font-family:var(--fm);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:1.25rem}
+#lb-close{position:absolute;top:1.5rem;right:1.5rem;width:40px;height:40px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,background .2s}
+#lb-close:hover{border-color:var(--bl);background:rgba(0,90,255,.15)}
+.sub-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.sub-card{background:var(--g1);border:1px solid var(--g2);cursor:none;transition:background .3s,border-color .3s;padding:2rem;display:flex;flex-direction:column;gap:1rem;border-radius:16px;overflow:hidden}
+.sub-card:hover{background:#1a1a1a;border-color:var(--g3)}
+.sub-num{font-family:var(--fm);font-size:.58rem;color:var(--g3);letter-spacing:.1em}
+.sub-title{font-family:var(--fd);font-size:clamp(1.2rem,2vw,1.7rem);color:var(--wh);line-height:1}
+.sub-desc{font-size:.85rem;color:var(--g3);line-height:1.6}
+.sub-type{font-family:var(--fm);font-size:.54rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase}
+.sub-arrow{margin-top:auto;width:34px;height:34px;border:1px solid var(--g2);display:flex;align-items:center;justify-content:center;align-self:flex-end;transition:background .25s,border-color .25s,transform .25s;border-radius:10px}
+.sub-card:hover .sub-arrow{background:var(--bl);border-color:var(--bl);transform:rotate(45deg) scale(1.05)}
+.sub-img{width:100%;aspect-ratio:16/9;border:1px solid var(--g2);display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;position:relative;overflow:hidden;flex-shrink:0;min-height:0;border-radius:10px;background:var(--g1)}
+.outblocks{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:1.5rem 0}
+.obox{background:var(--g1);padding:1.5rem 1.75rem;border:1px solid var(--g2);border-radius:12px}
+.otag{font-family:var(--fm);font-size:.56rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.55rem}
+.otitle{font-family:var(--fd);font-size:clamp(1.1rem,1.8vw,1.5rem);color:var(--wh);line-height:1.1;margin-bottom:.45rem}
+.odesc{font-size:.8rem;color:var(--g3);line-height:1.6}
+.aibadge-cs{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fm);font-size:.6rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--bl);border:1px solid rgba(0,90,255,.25);padding:.4rem .9rem;background:rgba(0,90,255,.06);margin-bottom:.8rem;border-radius:99px}
+.curiosity{border:1px solid var(--g2);padding:2rem;margin-top:2rem;background:var(--g1);border-radius:16px}
+.curiosity-label{font-family:var(--fm);font-size:.65rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem}
+.curiosity-title{font-family:var(--fd);font-size:clamp(1.2rem,2vw,1.7rem);color:var(--wh);margin-bottom:.75rem;line-height:1}
+.cs-cta{padding:4rem 0 6rem;border-top:1px solid var(--g2);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cs-cta-label{font-family:var(--fm);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g3);margin-bottom:.6rem}
+.cs-cta-title{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);color:var(--wh);line-height:1}
+.lp-frame{position:relative;width:100%;max-width:860px;margin:2.5rem auto 0}
+.lp-screen{width:100%;aspect-ratio:16/10;overflow-y:scroll;overflow-x:hidden;border-radius:18px;border:2px solid rgba(255,255,255,.12);box-shadow:0 0 0 2.5px #111,0 30px 70px rgba(0,0,0,.7);background:#fff;cursor:ns-resize;scrollbar-width:none}
+.lp-screen::-webkit-scrollbar{display:none}
+.lp-screen img{width:100%;display:block;pointer-events:none}
+.lp-scrolltrack{position:absolute;top:6px;right:7px;bottom:6px;width:3px;background:rgba(255,255,255,.08);border-radius:3px;pointer-events:none}
+.lp-thumb{position:absolute;left:0;right:0;top:0;height:20%;background:rgba(255,255,255,.35);border-radius:3px;transition:top .08s linear,height .08s linear}
+.lp-hint{text-align:center;font-family:var(--fm);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--g3);margin-top:.75rem}
+footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);display:flex;align-items:center;justify-content:space-between}
+.fcopy{font-family:var(--fm);font-size:.6rem;color:var(--g3);letter-spacing:.08em}
+.flinks{display:flex;gap:2rem}
+.flink{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;color:var(--g3);text-decoration:none;text-transform:uppercase;transition:color .2s;cursor:none}
+.flink:hover{color:var(--bl)}
+#cd{position:fixed;width:9px;height:9px;background:#005aff;border-radius:50%;pointer-events:none!important;z-index:99999;top:-20px;left:-20px;margin:-4.5px 0 0 -4.5px}
+#cr{position:fixed;width:36px;height:36px;border:1.5px solid rgba(0,90,255,.55);border-radius:50%;pointer-events:none!important;z-index:99998;top:-20px;left:-20px;margin:-18px 0 0 -18px}
+
+/* --- PREVIEW CARD PLACEHOLDERS --- */
+.img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#141414,#0a0a0a)}
+.img-placeholder svg{opacity:.12}
+
+@media(max-width:960px){
+  .pgrid,.sub-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:3rem}.about-left{position:relative;top:auto}
+  .expitem{grid-template-columns:1fr;gap:1rem}.exptags{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
+  .cs2,.cs3{grid-template-columns:1fr}.outblocks{grid-template-columns:1fr 1fr}.persona-cols{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .outblocks{grid-template-columns:1fr}
+  .flow{flex-direction:column;align-items:flex-start}.farr{transform:rotate(90deg)}
+  .csmeta{flex-direction:column;gap:1.5rem}
+}
+@media(max-width:768px){
+  #cd,#cr{display:none!important}
+  .nlinks{display:none}
+  nav{padding:1rem 1.25rem}
+  #nav-burger{display:flex}
+  #nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  #nav-burger.open span:nth-child(2){opacity:0}
+  #nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  #nav-mobile{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3rem;position:fixed;inset:0;background:#0a0a0a;z-index:190;opacity:0;pointer-events:none;transition:opacity .3s}
+  #nav-mobile.open{opacity:1;pointer-events:all}
+  #nav-mobile a{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,9vw,3.5rem);color:#f4f3ef;text-decoration:none;letter-spacing:.04em;cursor:pointer}
+  .cnt{padding:0 1.25rem}
+  .sh{flex-direction:column;gap:.4rem;margin-bottom:2rem}
+  #home-s{padding-top:3.5rem!important}
+  #hero-bubbles{display:none!important}
+  .htitle,.houtline{font-size:clamp(5rem,24vw,9rem)!important}
+  .pgrid,.sub-grid{grid-template-columns:1fr!important}
+  .cs2,.cs3{grid-template-columns:1fr!important}
+  .outblocks{grid-template-columns:1fr!important}
+  .expitem{grid-template-columns:1fr!important;gap:.75rem}
+  .persona-cols{grid-template-columns:1fr!important}
+  .about-grid{grid-template-columns:1fr!important}
+  .cshero{padding-top:4.5rem!important}
+  .dlg{font-size:clamp(2rem,8vw,3.2rem)!important}
+  .csmeta{flex-direction:column!important;gap:1.25rem}
+  .ctlinks{max-width:100%}
+  footer{flex-direction:column;gap:.75rem;align-items:flex-start;padding:1.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+<div id="cd"></div>
+<div id="cr"></div>
+<div class="pt" id="pt"></div>
+
+<div id="lb" onclick="closeLightbox(event)">
+  <div id="lb-close" onclick="closeLightbox()"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-caption"></div>
+</div>
+
+<nav id="nav">
+  <a class="nlogo" href="#" onclick="goP('home');return false">Nicole De Min<span>.</span></a>
+  <ul class="nlinks">
+    <li><a href="#" onclick="goP('home');setTimeout(function(){document.getElementById('work').scrollIntoView({behavior:'smooth',block:'start'})},250);return false">Work</a></li>
+    <li><a href="#" onclick="goP('exp');return false">Experience</a></li>
+    <li><a href="#" onclick="goP('about');return false">About</a></li>
+    <li><a href="#" onclick="goP('contact');return false">Contact</a></li>
+  </ul>
+  <button id="nav-burger" onclick="toggleMobileNav()" aria-label="Menu" style="background:none;border:none;padding:0;display:flex;flex-direction:column;justify-content:center;gap:5px;width:28px;height:28px;cursor:pointer">
+    <span style="display:block;width:22px;height:1.5px;background:#f4f3ef;transition:transform .3s,opacity .3s;transform-origin:center"></span>
+    <span style="display:block;width:22px;height:1.5px;background:#f4f3ef;transition:opacity .3s"></span>
+    <span style="display:block;width:22px;height:1.5px;background:#f4f3ef;transition:transform .3s,opacity .3s;transform-origin:center"></span>
+  </button>
+</nav>
+
+<div id="nav-mobile">
+  <a onclick="goP('home');setTimeout(function(){document.getElementById('work').scrollIntoView({behavior:'smooth'})},250);closeMobileNav();return false">Work</a>
+  <a onclick="goP('exp');closeMobileNav();return false">Experience</a>
+  <a onclick="goP('about');closeMobileNav();return false">About</a>
+  <a onclick="goP('contact');closeMobileNav();return false">Contact</a>
+</div>
+
+<!-- HOME -->
+<div id="page-home" class="page on">
+  <section id="home-s" class="cnt">
+    <div class="hbg"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%">
+      <div style="display:flex;flex-direction:column;justify-content:flex-end">
+        <div class="lbl" style="margin-bottom:2rem">Where UX meets strong visual design</div>
+        <div>
+          <span class="htitle">UX/UI &amp;</span>
+          <span class="houtline">WEB</span>
+          <span class="htitle">DESIGNER</span>
+        </div>
+        <div class="hbot">
+          <p class="bmd">I design interfaces that balance clarity, usability, and strong visual identity — integrating AI to move faster and working closely with developers to ensure the final result matches the design.</p>
+          <a class="btn btnp" href="#" onclick="sw();return false">
+            <span>View Work</span>
+            <svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div id="hero-bubbles" style="position:relative;height:520px;">
+        <div class="hbubble" data-r="130" data-target="4" style="position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div style="display:flex;align-items:baseline;gap:4px">
+            <span class="bubble-num" style="font-family:'Bebas Neue',sans-serif;font-size:5rem;line-height:1;color:#fff">4</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--bl);line-height:1">+</span>
+          </div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 1rem;margin-top:.4rem">Years exp.</div>
+        </div>
+        <div class="hbubble" data-r="145" data-target="100" style="position:absolute;width:290px;height:290px;border-radius:50%;background:rgba(0,90,255,.09);border:1px solid rgba(0,90,255,.22);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div style="display:flex;align-items:baseline;gap:4px">
+            <span class="bubble-num" style="font-family:'Bebas Neue',sans-serif;font-size:5.8rem;line-height:1;color:#fff">100</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:var(--bl);line-height:1">%</span>
+          </div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 1rem;margin-top:.4rem">Dev handoff quality</div>
+        </div>
+        <div class="hbubble" data-r="110" data-target="0" style="position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <span class="bubble-num" style="font-family:'Bebas Neue',sans-serif;font-size:4.4rem;line-height:1;color:#fff">0</span>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 .75rem;margin-top:.4rem;line-height:1.4">Random design decisions</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="padding:clamp(4rem,8vw,8rem) 0">
+    <div class="cnt">
+      <div class="sh">
+        <div>
+          <div class="lbl" style="color:var(--bl);margin-bottom:.5rem">Selected Work</div>
+          <div class="dmd">Case Studies</div>
+        </div>
+        <div class="lbl" style="text-align:right;max-width:160px;line-height:1.65">UX/UI · Product · Web</div>
+      </div>
+      <div class="pgrid" id="projects">
+        <a class="pcard" href="javascript:void(0)" onclick="goC('pg')">
+          <div class="pimg">
+            <div class="img-placeholder" style="background:linear-gradient(135deg,#0b170d,#0a0a0a 55%)">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="3" stroke="white" stroke-width="1.5"/><path d="M4 16h40" stroke="white" stroke-width="1.5"/><circle cx="10" cy="12" r="1.5" fill="white"/><circle cx="16" cy="12" r="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="pinfo">
+            <div class="ptop"><div class="ptitle">Purpose Green</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div>
+            <p class="pdesc">Selected UX/UI projects — navigation redesign, data-driven page structures, campaign landing pages, and A/B tested experiences</p>
+            <div class="tags"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag bl">AI-Assisted</span></div>
+          </div>
+        </a>
+        <a class="pcard" href="javascript:void(0)" onclick="goC('onco')">
+          <div class="pimg">
+            <div class="img-placeholder" style="background:linear-gradient(135deg,#090d18,#0a0a0a 55%)">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="14" y="4" width="20" height="40" rx="4" stroke="white" stroke-width="1.5"/><path d="M20 10h8M20 14h5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="24" cy="34" r="2" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="pinfo">
+            <div class="ptop"><div class="ptitle">Kranus Health</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div>
+            <p class="pdesc">Mobile app for oncology patients — daily check-ins, symptom tracking, and care team communication</p>
+            <div class="tags"><span class="tag">Mobile</span><span class="tag">Healthcare UX</span><span class="tag">Product Design</span></div>
+          </div>
+        </a>
+        <a class="pcard" href="javascript:void(0)" onclick="goC('el')">
+          <div class="pimg">
+            <div class="img-placeholder" style="background:linear-gradient(135deg,#0f0f0f,#0a0a0a 55%)">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="14" y="4" width="20" height="40" rx="4" stroke="white" stroke-width="1.5"/><circle cx="24" cy="20" r="6" stroke="white" stroke-width="1.5"/><path d="M24 17v3l2 2" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M17 32h14" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M19 36h10" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div class="pinfo">
+            <div class="ptop"><div class="ptitle">Expertlead</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div>
+            <p class="pdesc">Time tracking app designed from scratch — built for freelancers and contractors who need to log hours fast and report clearly</p>
+            <div class="tags"><span class="tag">App Design</span><span class="tag">Product Design</span><span class="tag">From Scratch</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="tstrip">
+    <div class="ticker">
+      <span>UX/UI Design</span><span class="dot">·</span><span>Web Design</span><span class="dot">·</span><span>Product Design</span><span class="dot">·</span><span>Design Systems</span><span class="dot">·</span><span>App Design</span><span class="dot">·</span><span>Landing Pages</span><span class="dot">·</span><span>A/B Testing</span><span class="dot">·</span><span>AI-Assisted Workflow</span><span class="dot">·</span><span>Webflow</span><span class="dot">·</span><span>CMS Architecture</span><span class="dot">·</span><span>Figma Systems</span><span class="dot">·</span><span>Information Architecture</span><span class="dot">·</span><span>Conversion Optimisation</span><span class="dot">·</span><span>Hotjar &amp; Analytics</span><span class="dot">·</span><span>Developer Collaboration</span><span class="dot">·</span><span>Prototyping</span><span class="dot">·</span><span>User Research</span><span class="dot">·</span>
+      <span>UX/UI Design</span><span class="dot">·</span><span>Web Design</span><span class="dot">·</span><span>Product Design</span><span class="dot">·</span><span>Design Systems</span><span class="dot">·</span><span>App Design</span><span class="dot">·</span><span>Landing Pages</span><span class="dot">·</span><span>A/B Testing</span><span class="dot">·</span><span>AI-Assisted Workflow</span><span class="dot">·</span><span>Webflow</span><span class="dot">·</span><span>CMS Architecture</span><span class="dot">·</span><span>Figma Systems</span><span class="dot">·</span><span>Information Architecture</span><span class="dot">·</span><span>Conversion Optimisation</span><span class="dot">·</span><span>Hotjar &amp; Analytics</span><span class="dot">·</span><span>Developer Collaboration</span><span class="dot">·</span><span>Prototyping</span><span class="dot">·</span><span>User Research</span><span class="dot">·</span>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="page-exp" class="page">
+  <section style="padding:clamp(4rem,8vw,8rem) 0"><div class="cnt">
+    <div class="sh" style="margin-top:4rem">
+      <div><div class="lbl" style="color:var(--bl);margin-bottom:.5rem">Experience</div><div class="dmd">Background</div></div>
+    </div>
+    <div class="explist">
+      <div class="expitem">
+        <div><div class="expc">Purpose Green</div><div class="expy">May 2025 — Now</div></div>
+        <div>
+          <div class="expr">UI/UX Web Designer</div>
+          <p class="expd">Designed and optimized Websites and Landing Pages, applying UI/UX Principles and improving layouts, components, and user flows based on User Behavior Analysis and Performance Data.</p>
+          <p class="expd" style="margin-top:.75rem">Led Website and Product Experience Improvements, designing scalable components, improving page structure and usability to ensure clarity, consistency, and high-quality digital interactions.</p>
+        </div>
+        <div class="exptags"><span class="tag">Web</span><span class="tag">UX/UI</span></div>
+      </div>
+      <div class="expitem">
+        <div><div class="expc">Kranus Health</div><div class="expy">Jan 2025 — Mar 2025</div></div>
+        <div>
+          <div class="expr">Lead UI/UX and Product Designer</div>
+          <p class="expd">Designing and Redesigning App Interfaces, including creating Prototypes for a new app in preparation for its launch.</p>
+          <p class="expd" style="margin-top:.75rem">Led the Design Team, overseeing all design materials (UX/UI, Print, Digital, Social Media) and making final decisions on their execution.</p>
+        </div>
+        <div class="exptags"><span class="tag">Mobile</span><span class="tag">Health</span><span class="tag">Product</span></div>
+      </div>
+      <div class="expitem">
+        <div><div class="expc">Expertlead</div><div class="expy">Jan 2021 — Oct 2023</div></div>
+        <div>
+          <div class="expr">UI/UX, Visual and Product Designer</div>
+          <p class="expd">Created Design Systems and Apps from scratch, delivering effective and consistent UX/UI Solutions across digital products in line with Expertlead's branding.</p>
+          <p class="expd" style="margin-top:.75rem">Used Figma and Adobe Creative Suite to design Interfaces, Prototypes, and a wide range of Marketing Assets.</p>
+        </div>
+        <div class="exptags"><span class="tag">System</span><span class="tag">Web</span><span class="tag">Product</span><span class="tag">App</span></div>
+      </div>
+      <div class="expitem">
+        <div><div class="expc">Ertl-Yang</div><div class="expy">May 2019 — Apr 2020</div></div>
+        <div>
+          <div class="expr">Graphic Designer &amp; Art Director</div>
+          <p class="expd">Designing Printed Material such as Brochures, Leaflets, Roll-Up Banners, Table Signages, ID Badges and Lanyards.</p>
+          <p class="expd" style="margin-top:.75rem">Designing Digital Material such as Digital Interactive Brochures, Social Media Banners and Video Editing.</p>
+        </div>
+        <div class="exptags"><span class="tag">Graphic</span><span class="tag">Branding</span></div>
+      </div>
+    </div>
+    <div style="padding:3rem 0;border-top:1px solid var(--g2)">
+      <a class="btn" href="CV_NicoleDeMin_Design.pdf" download>
+        <span>Download CV</span>
+        <svg class="ico" viewBox="0 0 12 12" fill="none" style="position:relative;z-index:1"><path d="M6 1v8M2 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div></section>
+</div>
+
+<!-- ABOUT -->
+<div id="page-about" class="page">
+  <section style="padding:clamp(4rem,8vw,8rem) 0"><div class="cnt" style="padding-top:4rem">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="lbl" style="margin-bottom:1.4rem;color:var(--bl)">About</div>
+        <div style="width:100%;max-width:320px;margin-bottom:2rem;border-radius:16px;overflow:hidden;border:1px solid var(--g2);background:var(--g1);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".15"><circle cx="40" cy="30" r="16" stroke="white" stroke-width="1.5"/><path d="M10 80 Q10 55 40 52 Q70 55 70 80" stroke="white" stroke-width="1.5" fill="none"/></svg>
+        </div>
+        <span class="abt">NO</span>
+        <span class="abo">RANDOM</span>
+        <span class="abt">DESIGN.</span>
+      </div>
+      <div class="ablocks">
+        <div>
+          <div class="ablbl">Who I am</div>
+          <p class="abtext">Berlin-based UX/UI and web designer. I studied at the Academy of Fine Arts and have spent 4+ years designing digital products in Berlin startups and scale-ups. I work across product design, web, and visual — with a strong eye for UI and a mindset for systems.</p>
+        </div>
+        <div>
+          <div class="ablbl">How I work</div>
+          <p class="abtext">I ask why before I ask what. I work closely with both product and marketing teams, challenge assumptions, and follow every project from first wireframe to live implementation. I collaborate directly with developers to make sure the design holds up in the real world.</p>
+        </div>
+        <div>
+          <div class="ablbl">AI in my workflow</div>
+          <div class="aibadge">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1L7.5 4.5H11L8.25 6.75L9.5 10.5L6 8.25L2.5 10.5L3.75 6.75L1 4.5H4.5L6 1Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
+            AI-Assisted Workflow
+          </div>
+          <p class="abtext">I use different AI tools depending on the task — Claude for layout reasoning and structure, ChatGPT for fast ideation, Lovable for quick prototyping, Gemini for research. The goal is always the same: reach better design decisions faster.</p>
+        </div>
+        <div>
+          <div class="ablbl">Principles</div>
+          <div class="avlist">
+            <div class="av"><div class="avdot"></div><span class="avtxt">Clarity over decoration</span></div>
+            <div class="av"><div class="avdot"></div><span class="avtxt">UI quality matters as much as UX thinking</span></div>
+            <div class="av"><div class="avdot"></div><span class="avtxt">Simplify the complex — don't sanitise it</span></div>
+            <div class="av"><div class="avdot"></div><span class="avtxt">Design decisions need a reason</span></div>
+            <div class="av"><div class="avdot"></div><span class="avtxt">A design isn't done until it's live and right</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <section style="padding:clamp(4rem,8vw,8rem) 0"><div class="cnt">
+    <div class="ctwrap">
+      <div class="lbl" style="color:var(--bl);margin-bottom:1.4rem">Contact</div>
+      <div class="dxl" style="margin-bottom:4rem">Let's<br>Talk.</div>
+      <div class="ctlinks">
+        <a href="mailto:nicoledemin.design@gmail.com" class="cli">
+          <div><div class="clip">Email</div><div class="cliv">nicoledemin.design@gmail.com</div></div>
+          <div class="cliark"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        </a>
+        <a href="https://www.linkedin.com/in/nicoledemin/" target="_blank" class="cli">
+          <div><div class="clip">LinkedIn</div><div class="cliv">linkedin.com/in/nicoledemin</div></div>
+          <div class="cliark"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        </a>
+      </div>
+      <p class="bsm" style="margin-top:2rem">Open to full-time roles, freelance projects, and interesting collaborations.</p>
+    </div>
+  </div></section>
+</div>
+
+<!-- PURPOSE GREEN OVERVIEW -->
+<div id="case-pg" class="cs"><div class="cnt">
+  <div class="cshero">
+    <a class="csback" href="#" onclick="closeC();return false"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 6H1M1 6L6 1M1 6L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to Work</a>
+    <div class="cseyebrow">Company / Purpose Green</div>
+    <div class="dlg" style="margin-bottom:.75rem">Purpose<br>Green</div>
+    <p class="cspos">UX/UI and web design projects — navigation systems, page redesigns, campaign landing pages, and A/B tested experiences for a B2B sustainability platform.</p>
+    <div class="tags" style="margin-bottom:2rem"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag">B2B</span><span class="tag">Product</span><span class="tag">Marketing</span><span class="tag bl">AI-Assisted</span></div>
+    <div class="csmeta">
+      <div><div class="csml">Role</div><div class="csmv">UX/UI &amp; Web Designer</div></div>
+      <div><div class="csml">Company</div><div class="csmv">Purpose Green</div></div>
+      <div><div class="csml">Timeline</div><div class="csmv">May 2025 — Present</div></div>
+      <div><div class="csml">Tools</div><div class="csmv">Figma, Webflow, Hotjar</div></div>
+    </div>
+  </div>
+  <div class="cssec">
+    <div class="cssl">Target Audience</div>
+    <div class="csst">The people using this</div>
+    <div class="persona-cards">
+      <div class="persona-card">
+        <div class="persona-head">
+          <div class="persona-avatar"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="#141414"/><ellipse cx="32" cy="26" rx="11" ry="13" fill="#c8a882"/><path d="M12 64 Q12 44 32 42 Q52 44 52 64" fill="#1e2a3a"/><circle cx="50" cy="14" r="5" fill="#005aff" opacity=".9"/></svg></div>
+          <div class="persona-meta"><div class="persona-name">Marcus, 52</div><div class="persona-role">Portfolio Manager · Institutional Fund, Berlin</div></div>
+        </div>
+        <div class="persona-cols">
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Context</div><p class="bsm">Oversees a portfolio of 30+ commercial and residential properties across Germany. Answers to investors on ESG performance and long-term asset value.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Goals</div><p class="bsm">Understand portfolio-wide risk at a glance. Find service providers he can trust. Make renovation investment decisions backed by data, not guesswork.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Behaviour</div><p class="bsm">Scans before he reads. Arrives via LinkedIn or referral. Loses trust at visual noise or unclear hierarchy. Responds to concrete numbers and social proof.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cssec">
+    <div class="cssl">AI in the Workflow</div>
+    <div class="aibadge-cs"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1L7.5 4.5H11L8.25 6.75L9.5 10.5L6 8.25L2.5 10.5L3.75 6.75L1 4.5H4.5L6 1Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>AI-Assisted</div>
+    <p class="bmd" style="max-width:640px">Claude for layout reasoning and content structure, ChatGPT for fast copy alternatives, Lovable for structural prototyping, Gemini for research. Each tool where it makes sense — always in service of a better design decision.</p>
+  </div>
+  <div class="cssec" style="border-bottom:0;padding-bottom:6rem">
+    <div class="cssl">Projects</div>
+    <div class="csst">Select a project</div>
+    <div class="sub-grid">
+      <div class="sub-card" onclick="goC('pg-nav')">
+        <div class="sub-img"><div style="width:100%;height:100%;background:linear-gradient(135deg,#0b170d,#0a0a0a);display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><rect x="2" y="6" width="32" height="24" rx="2" stroke="white" stroke-width="1.5"/><path d="M2 12h32M10 6v6M26 6v6" stroke="white" stroke-width="1.5"/></svg></div></div>
+        <div class="sub-num">01</div><div class="sub-type">Redesign</div>
+        <div class="sub-title">Structuring a Complex<br>Navigation System</div>
+        <p class="sub-desc">Replaced a basic flat navbar with a structured mega menu — icons, product banners, and clearer user paths.</p>
+        <div class="tags" style="margin-top:.5rem"><span class="tag">Navigation</span><span class="tag">UX/UI</span><span class="tag">Redesign</span></div>
+        <div class="sub-arrow"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sub-card" onclick="goC('pg-ref')">
+        <div class="sub-img"><div style="width:100%;height:100%;background:linear-gradient(135deg,#0b170d,#0a0a0a);display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><rect x="4" y="4" width="28" height="9" rx="1.5" stroke="white" stroke-width="1.5"/><rect x="4" y="17" width="28" height="9" rx="1.5" stroke="white" stroke-width="1.5"/></svg></div></div>
+        <div class="sub-num">02</div><div class="sub-type">Redesign</div>
+        <div class="sub-title">From Text-Heavy to<br>Scannable Content System</div>
+        <p class="sub-desc">Transformed a monotonous project list into a filterable, outcome-led case study system with visual data cards and CMS automation.</p>
+        <div class="tags" style="margin-top:.5rem"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag">CMS</span></div>
+        <div class="sub-arrow"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sub-card" onclick="goC('pg-camp')">
+        <div class="sub-img"><div style="width:100%;height:100%;background:linear-gradient(135deg,#0b170d,#0a0a0a);display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><rect x="6" y="4" width="24" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M11 10h14M11 15h10M11 20h8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <div class="sub-num">03</div><div class="sub-type">From scratch</div>
+        <div class="sub-title">Portfolio Analysis<br>Landing Experience</div>
+        <p class="sub-desc">Full landing page built from scratch for a LinkedIn B2B campaign — structured for a pre-qualified audience.</p>
+        <div class="tags" style="margin-top:.5rem"><span class="tag">Landing Page</span><span class="tag">Campaign</span><span class="tag">Conversion</span></div>
+        <div class="sub-arrow"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- PG NAV -->
+<div id="case-pg-nav" class="cs"><div class="cnt">
+  <div class="cshero">
+    <a class="csback" href="#" onclick="goC('pg');return false"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 6H1M1 6L6 1M1 6L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Purpose Green</a>
+    <div class="cseyebrow">Purpose Green · 01 / 03</div>
+    <div class="dlg" style="margin-bottom:.75rem">Structuring a Complex<br>Navigation System</div>
+    <p class="cspos">Replacing a flat, basic navigation with a structured mega menu — better hierarchy, icons, product banners, and clearer paths for every visitor type.</p>
+    <div class="tags" style="margin-bottom:2rem"><span class="tag">Navigation</span><span class="tag">UX/UI</span><span class="tag">Information Architecture</span><span class="tag">Redesign</span></div>
+    <div class="csmeta"><div><div class="csml">Type</div><div class="csmv">Redesign</div></div><div><div class="csml">Collaboration</div><div class="csmv">Product &amp; Marketing teams</div></div></div>
+  </div>
+  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">The old navigation was a flat horizontal list — no hierarchy, no visual anchors, no way to understand the product depth from the menu alone. As the platform grew with new services, the nav couldn't scale without becoming harder to read.</p></div><div><p class="bmd">I redesigned it from the information architecture up, working with both product and marketing teams to map the right structure. I then built the mega menu in Figma and worked directly with the developer on implementation.</p></div></div></div>
+  <div class="cssec"><div class="cssl">What wasn't working</div><div class="cs3"><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">No hierarchy</div><p class="bsm">All items had equal visual weight. Users couldn't quickly distinguish primary services from secondary tools.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">No visual anchors</div><p class="bsm">No icons, no banners, no product context. The nav communicated nothing about what the platform does.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Didn't scale</div><p class="bsm">Adding more items made it longer, not clearer. No room for product-level storytelling.</p></div></div></div>
+  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Scannability</div><div class="otitle">Icons + categories</div><div class="odesc">Users can orient themselves in the menu without reading every item.</div></div><div class="obox"><div class="otag">Product visibility</div><div class="otitle">Right-side banner</div><div class="odesc">Key products get dedicated visibility in the nav itself — no need to dig into sub-pages.</div></div><div class="obox"><div class="otag">Scalability</div><div class="otitle">Grows cleanly</div><div class="odesc">New service areas slot into existing categories without breaking the visual structure.</div></div></div></div>
+  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+</div></div>
+
+<!-- PG REF -->
+<div id="case-pg-ref" class="cs"><div class="cnt">
+  <div class="cshero">
+    <a class="csback" href="#" onclick="goC('pg');return false"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 6H1M1 6L6 1M1 6L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Purpose Green</a>
+    <div class="cseyebrow">Purpose Green · 02 / 03</div>
+    <div class="dlg" style="margin-bottom:.75rem">From Text-Heavy to<br>Scannable Content System</div>
+    <p class="cspos">Redesigning a flat, text-heavy reference list into a filterable, outcome-led card system — with a CMS architecture that auto-generates every visual element from data.</p>
+    <div class="tags" style="margin-bottom:2rem"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag">CMS Architecture</span><span class="tag">Data Visualization</span><span class="tag">Redesign</span></div>
+    <div class="csmeta"><div><div class="csml">Type</div><div class="csmv">Redesign</div></div><div><div class="csml">Platform</div><div class="csmv">Webflow CMS</div></div></div>
+  </div>
+  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">The References page is where potential clients validate Purpose Green's track record. The old version was a static blog format — long-form text, no visual hierarchy, and critical data like CO₂ savings and renovation costs buried in paragraphs. Nobody was actually reading it.</p><div class="db" style="margin-top:1.2rem"><p>Hotjar scroll data showed 70–75% of users reached the first content block, but engagement dropped steeply below.</p></div></div><div><p class="bmd">My role covered the full redesign: information architecture, the card system, the energy bar component, and the CMS automation architecture. I worked directly with the Webflow developer to define how every visual element maps to a CMS field.</p></div></div></div>
+  <div class="cssec"><div class="cssl">CMS Architecture</div><div class="csst">Zero design work per new entry</div>
+    <div class="flow">
+      <div class="fnode"><div class="fbox"><div class="fbt">Marketing</div><div class="fbs">Inputs data fields</div></div><div class="flbl">CMS entry</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Webflow CMS</div><div class="fbs">Stores all fields</div></div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Energy bar</div><div class="fbs">Auto-renders</div></div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Data chips</div><div class="fbs">CO₂, cost</div></div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Live page</div><div class="fbs">Zero design work</div></div></div>
+    </div>
+  </div>
+  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Data clarity</div><div class="otitle">Numbers at a glance</div><div class="odesc">Energy class, CO₂ savings and renovation cost are visible before clicking.</div></div><div class="obox"><div class="otag">CMS automation</div><div class="otitle">Zero design per entry</div><div class="odesc">Marketing adds a new reference by filling in CMS fields. Every chart generates automatically.</div></div><div class="obox"><div class="otag">Scalability</div><div class="otitle">Grows without friction</div><div class="odesc">The system handles 5 or 50 references with identical visual consistency.</div></div></div></div>
+  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+</div></div>
+
+<!-- PG CAMPAIGN -->
+<div id="case-pg-camp" class="cs"><div class="cnt">
+  <div class="cshero">
+    <a class="csback" href="#" onclick="goC('pg');return false"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 6H1M1 6L6 1M1 6L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Purpose Green</a>
+    <div class="cseyebrow">Purpose Green · 03 / 03</div>
+    <div class="dlg" style="margin-bottom:.75rem">Portfolio Analysis<br>Landing Experience</div>
+    <p class="cspos">A full landing page built from scratch for a LinkedIn B2B campaign — designed for a pre-qualified audience and built around one conversion goal.</p>
+    <div class="tags" style="margin-bottom:2rem"><span class="tag">Landing Page</span><span class="tag">Campaign</span><span class="tag">Conversion</span><span class="tag">From scratch</span></div>
+    <div class="csmeta"><div><div class="csml">Type</div><div class="csmv">From scratch</div></div><div><div class="csml">Campaign</div><div class="csmv">LinkedIn — January 2026</div></div></div>
+  </div>
+  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">The marketing team provided a first Figma draft with all the required content. It was functional but visually dense — not ready for a paid LinkedIn audience that makes a trust decision in seconds.</p></div><div><p class="bmd">After design, I worked directly with the developer to ensure accurate implementation and launched on time. Live within 48 hours of the campaign deadline.</p></div></div></div>
+  <div class="cssec"><div class="cssl">User Flow</div><div class="flow"><div class="fnode"><div class="fbox"><div class="fbt">Clicks ad</div><div class="fbs">LinkedIn</div></div></div><div class="farr">→</div><div class="fnode"><div class="fbox"><div class="fbt">Hero + form</div><div class="fbs">Register directly</div></div></div><div class="farr">→</div><div class="fnode"><div class="fbox"><div class="fbt">Partner logos</div><div class="fbs">Trust signal</div></div></div><div class="farr">→</div><div class="fnode"><div class="fbox"><div class="fbt">Use cases</div></div></div><div class="farr">→</div><div class="fnode"><div class="fbox"><div class="fbt">Bottom CTA</div></div></div></div></div>
+  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Quality</div><div class="otitle">Campaign-ready</div><div class="odesc">Polished and aligned with Purpose Green's brand — ready for a paid B2B audience.</div></div><div class="obox"><div class="otag">Hierarchy</div><div class="otitle">One clear path</div><div class="odesc">Each section has one job and hands off to the next.</div></div><div class="obox"><div class="otag">Delivery</div><div class="otitle">Live in 48 hours</div><div class="odesc">Designed, reviewed, and handed to development within 48 hours of the launch deadline.</div></div></div></div>
+  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+</div></div>
+
+<!-- KRANUS HEALTH -->
+<div id="case-onco" class="cs"><div class="cnt">
+  <div class="cshero">
+    <a class="csback" href="#" onclick="closeC();return false"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 6H1M1 6L6 1M1 6L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to Work</a>
+    <div class="cseyebrow">Company / Kranus Health</div>
+    <div class="dlg" style="margin-bottom:.75rem">Oncology<br>App</div>
+    <p class="cspos">Designing a mobile app home screen for oncology patients — clear, calm, and built to be used daily during active treatment.</p>
+    <div class="tags" style="margin-bottom:2rem"><span class="tag">Mobile</span><span class="tag">Healthcare UX</span><span class="tag">Product Design</span><span class="tag">App Design</span></div>
+    <div class="csmeta"><div><div class="csml">Role</div><div class="csmv">Lead UX/UI &amp; Product Designer</div></div><div><div class="csml">Company</div><div class="csmv">Kranus Health</div></div><div><div class="csml">Platform</div><div class="csmv">iOS / Android</div></div></div>
+    <!-- App screens visual -->
+    <div style="display:flex;gap:2rem;justify-content:center;margin-top:2.5rem">
+      <div style="width:38%;max-width:240px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
+        <div style="aspect-ratio:9/19.5;width:100%;border-radius:28px;background:linear-gradient(160deg,#0d1a1d,#050d0f);border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:1.5rem">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.55rem;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase">Day 21 / 90</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;letter-spacing:.04em">How are you today?</div>
+          <div style="display:flex;gap:.75rem">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">😞</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">😕</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(0,90,255,.2);border:1px solid rgba(0,90,255,.5);display:flex;align-items:center;justify-content:center;font-size:1.1rem">😐</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">🙂</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">😊</div>
+          </div>
+          <div style="width:100%;border-top:1px solid rgba(255,255,255,.06);padding-top:1rem">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Symptoms today</div>
+            <div style="display:flex;flex-wrap:wrap;gap:.35rem">
+              <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.48rem;border:1px solid rgba(0,90,255,.4);background:rgba(0,90,255,.12);color:rgba(0,90,255,.9);padding:.25rem .55rem;border-radius:99px">Fatigue</span>
+              <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.48rem;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);padding:.25rem .55rem;border-radius:99px">Nausea</span>
+              <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.48rem;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);padding:.25rem .55rem;border-radius:99px">Pain</span>
+            </div>
+          </div>
+        </div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Default state</span>
+      </div>
+      <div style="width:38%;max-width:240px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
+        <div style="aspect-ratio:9/19.5;width:100%;border-radius:28px;background:linear-gradient(160deg,#0d1a1d,#050d0f);border:1px solid rgba(0,90,255,.2);box-shadow:0 20px 60px rgba(0,90,255,.12),0 20px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:1.5rem">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.55rem;color:rgba(0,90,255,.7);letter-spacing:.1em;text-transform:uppercase">Check-in complete</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;letter-spacing:.04em;text-align:center">Your care team<br>has been notified</div>
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(0,90,255,.15);border:1px solid rgba(0,90,255,.35);display:flex;align-items:center;justify-content:center">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="#005aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="width:100%;border-top:1px solid rgba(255,255,255,.06);padding-top:1rem">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Medication taken?</div>
+            <div style="display:flex;gap:.5rem">
+              <div style="flex:1;padding:.5rem;background:rgba(0,90,255,.2);border:1px solid rgba(0,90,255,.4);border-radius:8px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;color:rgba(0,90,255,.9)">✓ Yes</div>
+              <div style="flex:1;padding:.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;color:rgba(255,255,255,.35)">No</div>
+            </div>
+          </div>
+        </div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Selected state</span>
+      </div>
+    </div>
+  </div>
+  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">Kranus Health was building a companion app for oncology patients in active treatment. I designed the home screen from scratch — working with the product team and clinical advisors to create something that patients would actually use every day, without adding to their cognitive load.</p></div><div><p class="bmd">The home screen is the most important view: clear, calm, one obvious next step. Check-in, symptom chips, and medication confirmation — all from a single view.<div class="db" style="margin-top:1rem"><p>Constraint: accessible design for users aged 45–75, including those with chemo-related cognitive effects.</p></div></p></div></div></div>
+  <div class="cssec"><div class="cssl">Design Decisions</div><div class="cs3"><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Emotion scale with icons</div><p class="bsm">5 visual emoji-style options from very unwell to great — no text label needed. Accessible at a glance even when fatigued.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Symptom chips</div><p class="bsm">Plain language labels (Fatigue, Bloating, Pain) — not clinical terms. Pre-populated with the most common treatment symptoms.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Single-page interaction</div><p class="bsm">Check-in, medication confirmation, and suggested content visible on one screen — no deep navigation required.</p></div></div></div>
+  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Clarity</div><div class="otitle">One screen, one job</div><div class="odesc">The daily routine is completable without opening any sub-pages — check-in, medication, done.</div></div><div class="obox"><div class="otag">Accessibility</div><div class="otitle">Plain language throughout</div><div class="odesc">No clinical terminology. Visual options where possible. Everything readable at standard font size.</div></div><div class="obox"><div class="otag">Tone</div><div class="otitle">Calm, not clinical</div><div class="odesc">The interface communicates care rather than data-collection.</div></div></div></div>
+  <div class="cssec" style="border-bottom:0;padding-bottom:5rem">
+    <div class="cssl">More Work</div><div class="csst">Explore other projects</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+      <a class="pcard" href="javascript:void(0)" onclick="goC('pg')" style="text-decoration:none;color:inherit">
+        <div class="pimg"><div class="img-placeholder" style="background:linear-gradient(135deg,#0b170d,#0a0a0a)"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><rect x="2" y="4" width="32" height="28" rx="2" stroke="white" stroke-width="1.5"/></svg></div></div>
+        <div class="pinfo"><div class="ptop"><div class="ptitle">Purpose Green</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div><p class="pdesc">Navigation redesign, data-driven page structures, campaign landing pages</p><div class="tags"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag bl">AI-Assisted</span></div></div>
+      </a>
+      <a class="pcard" href="javascript:void(0)" onclick="goC('el')" style="text-decoration:none;color:inherit">
+        <div class="pimg"><div class="img-placeholder" style="background:linear-gradient(135deg,#0f0f0f,#0a0a0a)"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><circle cx="18" cy="14" r="6" stroke="white" stroke-width="1.5"/><path d="M18 11v3l2 2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+        <div class="pinfo"><div class="ptop"><div class="ptitle">Expertlead</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div><p class="pdesc">Design system, time tracking app, and marketing assets — 2+ years embedded</p><div class="tags"><span class="tag">Design System</span><span class="tag">App Design</span></div></div>
+      </a>
+    </div>
+  </div>
+</div></div>
+
+<!-- EXPERTLEAD -->
+<div id="case-el" class="cs"><div class="cnt">
+  <div class="cshero">
+    <a class="csback" href="#" onclick="closeC();return false"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 6H1M1 6L6 1M1 6L6 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to Work</a>
+    <div class="cseyebrow">Company / Expertlead</div>
+    <div class="dlg" style="margin-bottom:.75rem">Time Tracking<br>App</div>
+    <p class="cspos">Designing a time tracking app for freelancers and contractors from scratch — built to make logging hours as frictionless as possible, while giving users the insights they actually need.</p>
+    <div class="tags" style="margin-bottom:2rem"><span class="tag">App Design</span><span class="tag">Product Design</span><span class="tag">UX/UI</span><span class="tag">From scratch</span></div>
+    <div class="csmeta"><div><div class="csml">Role</div><div class="csmv">UX/UI, Visual &amp; Product Designer</div></div><div><div class="csml">Company</div><div class="csmv">Expertlead</div></div><div><div class="csml">Timeline</div><div class="csmv">Jan 2021 — Oct 2023</div></div></div>
+    <!-- App screens -->
+    <div style="display:flex;gap:1.5rem;justify-content:center;margin-top:2.5rem">
+      <div style="width:28%;max-width:200px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
+        <div style="aspect-ratio:9/19.5;width:100%;border-radius:24px;background:linear-gradient(160deg,#111,#0a0a0a);border:1px solid rgba(255,255,255,.07);box-shadow:0 16px 48px rgba(0,0,0,.5);display:flex;flex-direction:column;padding:1.25rem;gap:.75rem">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase">Dashboard</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:white">32h 14m</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.45rem;color:rgba(255,255,255,.35)">This week</div>
+          <div style="flex:1;border-top:1px solid rgba(255,255,255,.05);padding-top:.75rem;display:flex;flex-direction:column;gap:.5rem">
+            <div style="background:rgba(0,90,255,.12);border:1px solid rgba(0,90,255,.2);padding:.5rem .7rem;border-radius:6px"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;color:rgba(0,90,255,.8)">Acme Corp · 18h</div></div>
+            <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:.5rem .7rem;border-radius:6px"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;color:rgba(255,255,255,.4)">InnoTech · 14h</div></div>
+          </div>
+        </div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Dashboard</span>
+      </div>
+      <div style="width:28%;max-width:200px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
+        <div style="aspect-ratio:9/19.5;width:100%;border-radius:24px;background:linear-gradient(160deg,#111,#0a0a0a);border:1px solid rgba(0,90,255,.2);box-shadow:0 16px 48px rgba(0,90,255,.1),0 16px 48px rgba(0,0,0,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.25rem;gap:.75rem">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(0,90,255,.7);letter-spacing:.1em;text-transform:uppercase">Timer running</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:white;letter-spacing:.04em">02:34:18</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;color:rgba(255,255,255,.4)">Acme Corp</div>
+          <div style="width:52px;height:52px;border-radius:50%;background:rgba(0,90,255,.15);border:1px solid rgba(0,90,255,.35);display:flex;align-items:center;justify-content:center;cursor:pointer">
+            <div style="width:14px;height:14px;background:#005aff;border-radius:2px"></div>
+          </div>
+        </div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Timer</span>
+      </div>
+      <div style="width:28%;max-width:200px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
+        <div style="aspect-ratio:9/19.5;width:100%;border-radius:24px;background:linear-gradient(160deg,#111,#0a0a0a);border:1px solid rgba(255,255,255,.07);box-shadow:0 16px 48px rgba(0,0,0,.5);display:flex;flex-direction:column;padding:1.25rem;gap:.75rem">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase">Monthly · Nov</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:white">128h / 160h</div>
+          <div style="width:100%;height:4px;background:rgba(255,255,255,.06);border-radius:2px"><div style="width:80%;height:4px;background:#005aff;border-radius:2px"></div></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:.4rem;border-top:1px solid rgba(255,255,255,.05);padding-top:.75rem">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;color:rgba(255,255,255,.4)">Acme Corp</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;color:white">72h</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;color:rgba(255,255,255,.4)">InnoTech</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;color:white">56h</span></div>
+          </div>
+        </div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Insights</span>
+      </div>
+    </div>
+  </div>
+  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">Expertlead needed a time tracking tool built specifically for their freelancer network — not a generic app, but something that understood how contractors actually work: multiple clients, hourly billing, monthly reporting. I designed it end-to-end, from research and personas to high-fidelity screens.</p><div class="db" style="margin-top:1.2rem"><p>The core design challenge: time tracking is perceived as admin. The goal was to remove every possible source of friction.</p></div></div><div><p class="bmd">I ran the full design process — user research, competitive analysis, information architecture, wireframes, and high-fidelity UI. I also built the component library for the app within the Expertlead design system.</p></div></div></div>
+  <div class="cssec"><div class="cssl">The core problem</div><div class="cs3"><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Tracking felt like work</div><p class="bsm">Existing tools required too many taps, too many fields. Freelancers were logging retroactively — inaccurate and frustrating.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">No useful overview</div><p class="bsm">Raw time logs without structure. No per-client breakdown, no weekly patterns.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Month-end was manual</div><p class="bsm">Freelancers were copy-pasting data into spreadsheets. The app didn't connect logging to reporting.</p></div></div></div>
+  <div class="cssec"><div class="cssl">User Flow</div><div class="csst">The daily tracking loop</div>
+    <div class="flow">
+      <div class="fnode"><div class="fbox"><div class="fbt">Open app</div><div class="fbs">Home screen</div></div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Start timer</div><div class="fbs">2 taps</div></div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Work</div><div class="fbs">Timer runs</div></div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Stop + tag</div><div class="fbs">Project confirm</div></div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Daily summary</div></div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Monthly report</div><div class="fbs">Auto-generated</div></div></div>
+    </div>
+  </div>
+  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Speed</div><div class="otitle">Full log in under 30 sec</div><div class="odesc">The 2-tap timer and contextual suggestions made daily tracking fast enough that users actually did it in the moment.</div></div><div class="obox"><div class="otag">Clarity</div><div class="otitle">Insights as a core view</div><div class="odesc">Hours per client, weekly patterns, contracted vs logged — all visible in one screen.</div></div><div class="obox"><div class="otag">System</div><div class="otitle">Part of the design system</div><div class="odesc">All app components were built as part of the Expertlead design system — reusable across product and web.</div></div></div></div>
+  <div class="cssec" style="border-bottom:0;padding-bottom:5rem">
+    <div class="cssl">More Work</div><div class="csst">Explore other projects</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+      <a class="pcard" href="javascript:void(0)" onclick="goC('pg')" style="text-decoration:none;color:inherit">
+        <div class="pimg"><div class="img-placeholder" style="background:linear-gradient(135deg,#0b170d,#0a0a0a)"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><rect x="2" y="4" width="32" height="28" rx="2" stroke="white" stroke-width="1.5"/></svg></div></div>
+        <div class="pinfo"><div class="ptop"><div class="ptitle">Purpose Green</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div><p class="pdesc">Navigation redesign, data-driven page structures, campaign landing pages</p><div class="tags"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag bl">AI-Assisted</span></div></div>
+      </a>
+      <a class="pcard" href="javascript:void(0)" onclick="goC('onco')" style="text-decoration:none;color:inherit">
+        <div class="pimg"><div class="img-placeholder" style="background:linear-gradient(135deg,#090d18,#0a0a0a)"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><rect x="10" y="2" width="16" height="32" rx="3" stroke="white" stroke-width="1.5"/></svg></div></div>
+        <div class="pinfo"><div class="ptop"><div class="ptitle">Kranus Health</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div><p class="pdesc">Mobile app for oncology patients — daily check-ins, symptom tracking</p><div class="tags"><span class="tag">Mobile</span><span class="tag">Healthcare UX</span></div></div>
+      </a>
+    </div>
+  </div>
+</div></div>
+
+<footer id="footer">
+  <div class="fcopy">© 2026 — Nicole De Min, Berlin</div>
+  <div class="flinks">
+    <a class="flink" href="mailto:nicoledemin.design@gmail.com">Email</a>
+    <a class="flink" href="https://www.linkedin.com/in/nicoledemin/" target="_blank">LinkedIn</a>
+    <a class="flink" href="#" onclick="goP('contact');return false">Contact</a>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('sc',window.scrollY>50)});
+var cP='home',cC=null,pt=document.getElementById('pt');
+
+function goP(id){
+  pt.classList.add('on');
+  setTimeout(function(){
+    document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
+    document.querySelectorAll('.cs').forEach(function(c){c.classList.remove('on')});
+    document.getElementById('page-'+id).classList.add('on');
+    document.getElementById('footer').style.display='flex';
+    cP=id;cC=null;window.scrollTo(0,0);pt.classList.remove('on');
+  },200);
+}
+
+function goC(id){
+  pt.classList.add('on');
+  setTimeout(function(){
+    document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
+    document.querySelectorAll('.cs').forEach(function(c){c.classList.remove('on')});
+    var el=document.getElementById('case-'+id);
+    if(el)el.classList.add('on');
+    document.getElementById('footer').style.display='flex';
+    cC=id;window.scrollTo(0,0);pt.classList.remove('on');
+  },200);
+}
+
+function closeC(){
+  goP(cP||'home');
+  setTimeout(function(){var w=document.getElementById('projects');if(w)w.scrollIntoView({behavior:'smooth',block:'start'})},350);
+}
+
+function sw(){var w=document.getElementById('work');if(w)w.scrollIntoView({behavior:'smooth',block:'start'})}
+
+// Bubble physics
+(function(){
+  var activeRaf = null;
+
+  function startBubbles(){
+    if(activeRaf){ cancelAnimationFrame(activeRaf); activeRaf=null; }
+
+    var container = document.getElementById('hero-bubbles');
+    if(!container) return;
+    var els = Array.from(container.querySelectorAll('.hbubble'));
+    if(!els.length) return;
+
+    // Use explicit data-r — never depend on offsetWidth which may be 0
+    var R = els.map(function(e){ return parseInt(e.getAttribute('data-r')||'100'); });
+
+    // Get container size — defer if not laid out yet
+    var CW = container.offsetWidth;
+    var CH = container.offsetHeight;
+    if(CW < 50 || CH < 50){ setTimeout(startBubbles, 80); return; }
+
+    var GAP = 14;
+
+    // Well-separated starting triangle (in fractions of CW/CH)
+    var pos = [
+      { x: CW*0.25, y: CH*0.22 },
+      { x: CW*0.75, y: CH*0.48 },
+      { x: CW*0.48, y: CH*0.82 }
+    ];
+
+    // Push apart iteratively until no overlap
+    for(var it=0; it<400; it++){
+      var clean=true;
+      for(var a=0;a<pos.length;a++) for(var b=a+1;b<pos.length;b++){
+        var ddx=pos[b].x-pos[a].x, ddy=pos[b].y-pos[a].y;
+        var dd=Math.sqrt(ddx*ddx+ddy*ddy)||0.001;
+        var need=R[a]+R[b]+GAP;
+        if(dd<need){
+          clean=false;
+          var push=(need-dd)/2;
+          pos[a].x-=(ddx/dd)*push; pos[a].y-=(ddy/dd)*push;
+          pos[b].x+=(ddx/dd)*push; pos[b].y+=(ddy/dd)*push;
+        }
+      }
+      // clamp inside
+      for(var i=0;i<pos.length;i++){
+        pos[i].x=Math.max(R[i],Math.min(CW-R[i],pos[i].x));
+        pos[i].y=Math.max(R[i],Math.min(CH-R[i],pos[i].y));
+      }
+      if(clean) break;
+    }
+
+    // Float waves — all different frequencies so they move independently
+    var FX=[ {a:20,f:0.00058,p:0.0}, {a:14,f:0.00082,p:2.1}, {a:16,f:0.00046,p:1.0} ];
+    var FY=[ {a:24,f:0.00074,p:1.1}, {a:18,f:0.00052,p:0.4}, {a:13,f:0.00090,p:2.7} ];
+
+    // State objects
+    var S = els.map(function(el,i){
+      el.style.left=(pos[i].x-R[i])+'px';
+      el.style.top =(pos[i].y-R[i])+'px';
+      return {el:el, r:R[i], hx:pos[i].x, hy:pos[i].y, cx:pos[i].x, cy:pos[i].y, vx:0, vy:0};
+    });
+
+    var mouse={x:-99999,y:-99999};
+    container.addEventListener('mousemove',function(e){
+      var rc=container.getBoundingClientRect();
+      mouse.x=e.clientX-rc.left; mouse.y=e.clientY-rc.top;
+    });
+    container.addEventListener('mouseleave',function(){mouse.x=-99999;mouse.y=-99999;});
+
+    var tick=0;
+    function frame(){
+      tick++;
+      var W=container.offsetWidth, H=container.offsetHeight;
+
+      // Step 1: spring to float target + mouse repulsion
+      for(var i=0;i<S.length;i++){
+        var s=S[i];
+        var tx = s.hx + FX[i].a*Math.sin(tick*FX[i].f+FX[i].p);
+        var ty = s.hy + FY[i].a*Math.sin(tick*FY[i].f+FY[i].p);
+        s.vx += (tx-s.cx)*0.030;
+        s.vy += (ty-s.cy)*0.030;
+
+        var mdx=s.cx-mouse.x, mdy=s.cy-mouse.y;
+        var md=Math.sqrt(mdx*mdx+mdy*mdy)||1;
+        var repR=s.r+100;
+        if(md<repR){
+          var str=(1-md/repR)*0.8;
+          s.vx+=(mdx/md)*str; s.vy+=(mdy/md)*str;
+          s.el.style.filter='drop-shadow(0 0 32px rgba(0,90,255,'+((1-md/repR)*0.55)+'))';
+        } else { s.el.style.filter=''; }
+
+        s.vx*=0.85; s.vy*=0.85;
+        s.cx+=s.vx;  s.cy+=s.vy;
+
+        // Wall bounce (hard)
+        if(s.cx-s.r<0){   s.cx=s.r;    s.vx= Math.abs(s.vx)*0.52; }
+        if(s.cx+s.r>W){   s.cx=W-s.r;  s.vx=-Math.abs(s.vx)*0.52; }
+        if(s.cy-s.r<0){   s.cy=s.r;    s.vy= Math.abs(s.vy)*0.52; }
+        if(s.cy+s.r>H){   s.cy=H-s.r;  s.vy=-Math.abs(s.vy)*0.52; }
+      }
+
+      // Step 2: bubble–bubble collision, 4 passes for stability
+      for(var pass=0;pass<4;pass++){
+        for(var a=0;a<S.length;a++){
+          for(var b=a+1;b<S.length;b++){
+            var sa=S[a], sb=S[b];
+            var dx=sb.cx-sa.cx, dy=sb.cy-sa.cy;
+            var d=Math.sqrt(dx*dx+dy*dy)||0.001;
+            var minD=sa.r+sb.r+GAP;
+            if(d<minD){
+              var nx=dx/d, ny=dy/d, ov=(minD-d)/2;
+              sa.cx-=nx*ov; sa.cy-=ny*ov;
+              sb.cx+=nx*ov; sb.cy+=ny*ov;
+              var dvx=sa.vx-sb.vx, dvy=sa.vy-sb.vy;
+              var dot=dvx*nx+dvy*ny;
+              if(dot>0){
+                sa.vx-=dot*nx*0.44; sa.vy-=dot*ny*0.44;
+                sb.vx+=dot*nx*0.44; sb.vy+=dot*ny*0.44;
+              }
+            }
+          }
+        }
+      }
+
+      // Step 3: write to DOM
+      for(var i=0;i<S.length;i++){
+        S[i].el.style.left=(S[i].cx-S[i].r)+'px';
+        S[i].el.style.top =(S[i].cy-S[i].r)+'px';
+      }
+
+      activeRaf=requestAnimationFrame(frame);
+    }
+    activeRaf=requestAnimationFrame(frame);
+  }
+
+  if(document.readyState==='complete') startBubbles();
+  else window.addEventListener('load', startBubbles);
+
+  var _goP=window.goP;
+  window.goP=function(id){ _goP(id); if(id==='home') setTimeout(startBubbles,350); };
+})();
+
+// Mobile nav
+function toggleMobileNav(){
+  var burger=document.getElementById('nav-burger'),menu=document.getElementById('nav-mobile');
+  burger.classList.toggle('open');menu.classList.toggle('open');
+  document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+}
+function closeMobileNav(){
+  document.getElementById('nav-burger').classList.remove('open');
+  document.getElementById('nav-mobile').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// Lightbox
+function openLightbox(src,caption){document.getElementById('lb-img').src=src;document.getElementById('lb-caption').textContent=caption;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(e){if(e&&e.target===document.getElementById('lb-img'))return;document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+
+// Cursor
+(function(){
+  var cd=document.getElementById('cd'),cr=document.getElementById('cr');
+  if(!cd||!cr)return;
+  var mx=-100,my=-100,rx=-100,ry=-100,entered=false;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';if(!entered){rx=mx;ry=my;entered=true;}},{passive:true});
+  (function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+  document.addEventListener('mouseover',function(e){var t=e.target.closest('a,button,.pcard,.sub-card,.cli,.expitem,.av');cd.style.width=t?'13px':'9px';cd.style.height=t?'13px':'9px';cr.style.width=t?'50px':'36px';cr.style.height=t?'50px':'36px';},{passive:true});
+})();
+</script>
+</body>
+</html>
