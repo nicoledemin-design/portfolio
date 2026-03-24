@@ -5,9 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0a0a">
 <title>Nicole De Min — UX/UI & Web Designer, Berlin</title>
+<style>
+/* Bebas Neue — self-hosted, zero flash sul titolo principale */
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('bebas-neue-v16-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;background:#0a0a0a}
@@ -79,13 +89,13 @@ nav.sc{background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-color:var
 .expr{font-family:var(--fm);font-size:.62rem;letter-spacing:.08em;color:var(--bl);text-transform:uppercase;margin-bottom:.65rem}
 .expd{font-size:.87rem;color:var(--g3);line-height:1.72;max-width:500px}
 .exptags{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .about-left{position:sticky;top:7rem}
-.abt{font-family:var(--fd);font-size:clamp(4rem,8vw,9rem);line-height:.88;letter-spacing:-.01em;display:block}
-.abo{font-family:var(--fd);font-size:clamp(4rem,8vw,9rem);line-height:.88;letter-spacing:-.01em;display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.12)}
+.abt{font-family:var(--fd);font-size:clamp(3.2rem,6.5vw,7rem);line-height:.88;letter-spacing:-.01em;display:block}
+.abo{font-family:var(--fd);font-size:clamp(3.2rem,6.5vw,7rem);line-height:.88;letter-spacing:-.01em;display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.12)}
 .ablocks{display:flex;flex-direction:column;gap:2.5rem}
 .ablbl{font-family:var(--fm);font-size:.7rem;color:var(--bl);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.65rem}
-.abtext{font-size:.95rem;color:var(--g4);line-height:1.76}
+.abtext{font-size:.88rem;color:var(--g4);line-height:1.72}
 .avlist{border:1px solid var(--g2);margin-top:.75rem;border-radius:12px;overflow:hidden}
 .av{padding:.9rem 1.2rem;border-bottom:1px solid var(--g2);display:flex;gap:.85rem;align-items:center;transition:background .2s}
 .av:last-child{border-bottom:0}.av:hover{background:var(--g1)}
@@ -120,13 +130,14 @@ nav.sc{background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-color:var
 .pb{border:1px solid var(--g2);padding:1.4rem;border-radius:10px}
 .db{border-left:2px solid var(--g2);padding-left:1.4rem;margin:1.5rem 0}
 .db p{font-size:.875rem;color:var(--g4);line-height:1.72}
-.flow{display:flex;align-items:flex-start;flex-wrap:wrap;padding:1.5rem 0;row-gap:1.5rem}
-.fnode{display:flex;flex-direction:column;align-items:center;gap:.4rem;flex-shrink:0}
-.fbox{padding:.55rem .95rem;border:1px solid var(--g2);background:var(--g1);min-width:100px;min-height:52px;text-align:center;display:flex;flex-direction:column;justify-content:center;border-radius:8px}
-.fbt{font-family:var(--fm);font-size:.52rem;letter-spacing:.09em;text-transform:uppercase;color:var(--wh);line-height:1.4}
-.fbs{font-family:var(--fm);font-size:.44rem;letter-spacing:.07em;color:var(--g3);margin-top:.14rem;line-height:1.4}
-.farr{padding:0 .4rem;color:var(--g3);font-size:.85rem;flex-shrink:0;align-self:center}
-.flbl{font-family:var(--fm);font-size:.44rem;color:var(--g3);letter-spacing:.07em;text-align:center;margin-top:.14rem;max-width:100px;line-height:1.4}
+.flow{display:flex;align-items:flex-start;flex-wrap:wrap;padding:2rem 0;gap:.5rem;row-gap:1.5rem}
+.fnode{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex-shrink:0}
+.fbox{padding:.85rem 1.25rem;border:1px solid var(--g2);background:var(--g1);min-width:120px;min-height:64px;text-align:center;display:flex;flex-direction:column;justify-content:center;border-radius:10px;transition:border-color .2s}
+.fbox:hover{border-color:var(--bl)}
+.fbt{font-family:var(--fm);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--wh);line-height:1.4;font-weight:500}
+.fbs{font-family:var(--fm);font-size:.52rem;letter-spacing:.05em;color:var(--g3);margin-top:.2rem;line-height:1.4}
+.farr{padding:0 .5rem;color:var(--g3);font-size:1.1rem;flex-shrink:0;align-self:center}
+.flbl{font-family:var(--fm);font-size:.5rem;color:var(--g3);letter-spacing:.07em;text-align:center;margin-top:.2rem;max-width:120px;line-height:1.4}
 .jtbl{width:100%;border-collapse:collapse;margin:1.5rem 0}
 .jtbl th{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);padding:.65rem 1rem;text-align:left;border-bottom:1px solid var(--g2);background:var(--g1)}
 .jtbl td{padding:.85rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;font-size:.85rem;color:var(--g4);line-height:1.6}
@@ -140,6 +151,26 @@ nav.sc{background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-color:var
 .persona-name{font-family:var(--fd);font-size:1.3rem;color:var(--wh);line-height:1;letter-spacing:.02em}
 .persona-role{font-family:var(--fm);font-size:.58rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase}
 .persona-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem}
+.more-work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
+@media(max-width:768px){
+  .more-work-grid{grid-template-columns:1fr!important;gap:1rem!important}
+  .more-work-grid .ptitle{font-size:clamp(2rem,9vw,3rem)!important}
+  .more-work-grid .pimg{aspect-ratio:16/8!important}
+}
+.journey-table-wrap{display:block}
+.journey-cards{display:none}
+.jcard{border:1px solid var(--g2);background:var(--g1);border-radius:12px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.jcard-step{font-family:var(--fd);font-size:1.5rem;color:var(--wh);letter-spacing:.02em;line-height:1;padding-bottom:.75rem;border-bottom:1px solid var(--g2)}
+.jcard-row{display:flex;gap:.75rem;align-items:flex-start}
+.jcard-label{font-family:var(--fm);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bl);flex-shrink:0;width:44px;padding-top:.15rem}
+.jcard-val{font-size:.88rem;color:var(--g4);line-height:1.55}
+.jcard-design .jcard-val{color:var(--g3)}
+@media(max-width:768px){
+  .journey-table-wrap{display:none!important}
+  .journey-cards{display:flex!important;flex-direction:column;gap:1rem;margin-top:1rem}
+  .jcard-step{font-size:clamp(1.6rem,7vw,2.2rem)!important}
+  .jcard-val{font-size:.9rem!important}
+}
 .nav-screen-thumb{cursor:pointer}
 .nav-screen-img-wrap{position:relative;border:1px solid var(--g2);border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s}
 .nav-screen-thumb:hover .nav-screen-img-wrap{border-color:var(--bl);transform:translateY(-2px)}
@@ -158,7 +189,7 @@ nav.sc{background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-color:var
 .sub-card{background:var(--g1);border:1px solid var(--g2);cursor:none;transition:background .3s,border-color .3s;padding:2rem;display:flex;flex-direction:column;gap:1rem;border-radius:16px;overflow:hidden}
 .sub-card:hover{background:#1a1a1a;border-color:var(--g3)}
 .sub-num{font-family:var(--fm);font-size:.58rem;color:var(--g3);letter-spacing:.1em}
-.sub-title{font-family:var(--fd);font-size:clamp(1.2rem,2vw,1.7rem);color:var(--wh);line-height:1}
+.sub-title{font-family:var(--fd);font-size:clamp(1.4rem,2.6vw,2rem);color:var(--wh);line-height:1;letter-spacing:.02em}
 .sub-desc{font-size:.85rem;color:var(--g3);line-height:1.6}
 .sub-type{font-family:var(--fm);font-size:.54rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase}
 .sub-arrow{margin-top:auto;width:34px;height:34px;border:1px solid var(--g2);display:flex;align-items:center;justify-content:center;align-self:flex-end;transition:background .25s,border-color .25s,transform .25s;border-radius:10px}
@@ -203,7 +234,14 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
 }
 @media(max-width:600px){
   .outblocks{grid-template-columns:1fr}
-  .flow{flex-direction:column;align-items:flex-start}.farr{transform:rotate(90deg)}
+  /* Flow diagram mobile — centrato, box grandi, frecce centrate */
+  .flow{flex-direction:column!important;align-items:center!important;gap:.75rem!important;padding:1.5rem 0!important}
+  .fnode{width:100%!important;align-items:center!important}
+  .fbox{width:85%!important;min-width:0!important;min-height:72px!important;padding:1rem 1.5rem!important}
+  .fbt{font-size:.8rem!important;letter-spacing:.06em!important}
+  .fbs{font-size:.65rem!important}
+  .flbl{font-size:.6rem!important;max-width:none!important}
+  .farr{transform:none!important;align-self:center!important;font-size:1.4rem!important;padding:.2rem 0!important}
   .csmeta{flex-direction:column;gap:1.5rem}
 }
 @media(max-width:768px){
@@ -229,11 +267,102 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
   .persona-cols{grid-template-columns:1fr!important}
   .about-grid{grid-template-columns:1fr!important}
   .cshero{padding-top:4.5rem!important}
-  .dlg{font-size:clamp(2rem,8vw,3.2rem)!important}
   .csmeta{flex-direction:column!important;gap:1.25rem}
+  [style*="grid-template-columns:repeat(5,1fr)"]{grid-template-columns:1fr 1fr!important}
   .ctlinks{max-width:100%}
   footer{flex-direction:column;gap:.75rem;align-items:flex-start;padding:1.5rem 1.25rem}
+
+  /* ── TITOLI ENORMI SU MOBILE ── */
+
+  /* Hero homepage */
+  .htitle,.houtline{font-size:clamp(5.5rem,26vw,9rem)!important;line-height:.86!important}
+
+  /* Titoli display case study (dlg) */
+  .dlg{font-size:clamp(3.2rem,13vw,5rem)!important;line-height:.9!important}
+
+  /* Titoli sezione (dmd) */
+  .dmd{font-size:clamp(2.8rem,12vw,4rem)!important;line-height:.92!important}
+
+  /* Titoli card homepage pcard */
+  .ptitle{font-size:clamp(2rem,9vw,3rem)!important;letter-spacing:.01em!important}
+
+  /* Sub-card title dentro PG projects */
+  .sub-title{font-size:clamp(1.8rem,8vw,2.8rem)!important;line-height:.95!important}
+
+  /* Titoli sezione dentro case study (csst) */
+  .csst{font-size:clamp(2rem,9vw,3.2rem)!important;line-height:.92!important}
+
+  /* Titoli obox outcome cards */
+  .otitle{font-size:clamp(1.6rem,7vw,2.4rem)!important;line-height:.95!important}
+
+  /* Titoli experience (expc) */
+  .expc{font-size:clamp(2rem,9vw,3rem)!important}
+
+  /* About headline NO RANDOM DESIGN */
+  .abt,.abo{font-size:clamp(3.8rem,17vw,6rem)!important}
+
+  /* Contact let's talk */
+  .dxl{font-size:clamp(4rem,18vw,7rem)!important}
+
+  /* Contact link cliv */
+  .cliv{font-size:clamp(1.6rem,7vw,2.6rem)!important}
+
+  /* cs-cta title */
+  .cs-cta-title{font-size:clamp(1.8rem,8vw,2.8rem)!important}
+
+  /* Persona name */
+  .persona-name{font-size:clamp(1.6rem,7vw,2.4rem)!important}
+
+  /* Curiosity title */
+  .curiosity-title{font-size:clamp(1.8rem,8vw,2.6rem)!important}
 }
+
+/* IMMAGINI REALI — solo CSS, zero JS modificato */
+#projects .pcard:nth-child(1) .pimg{background:url('References.png') center top/cover no-repeat}
+#projects .pcard:nth-child(2) .pimg{background:url('Kranus_Oncology_App.png') center/cover no-repeat}
+#projects .pcard:nth-child(3) .pimg{background:url('Expertlead.png') center/cover no-repeat}
+#projects .pcard .pimg .img-placeholder,
+#projects .pcard .pimg svg{display:none!important}
+.sub-grid .sub-card:nth-child(1) .sub-img{background:url('pg_nav_card.png') center top/cover no-repeat}
+.sub-grid .sub-card:nth-child(2) .sub-img{background:url('References.png') center top/cover no-repeat}
+.sub-grid .sub-card:nth-child(3) .sub-img{background:url('pg_camp_visual.png') center top/cover no-repeat}
+.sub-grid .sub-card .sub-img>div,.sub-grid .sub-card .sub-img svg{display:none!important}
+#case-onco .pcard:nth-child(1) .pimg{background:url('References.png') center top/cover no-repeat}
+#case-onco .pcard:nth-child(2) .pimg{background:url('Expertlead.png') center/cover no-repeat}
+#case-onco .pcard .pimg .img-placeholder{display:none!important}
+#case-el .pcard:nth-child(1) .pimg{background:url('References.png') center top/cover no-repeat}
+#case-el .pcard:nth-child(2) .pimg{background:url('Kranus_Oncology_App.png') center/cover no-repeat}
+#case-el .pcard .pimg .img-placeholder{display:none!important}
+.about-left [style*="aspect-ratio:3/4"]{background:url('Nicole.png') center top/cover no-repeat!important;display:block!important;max-width:260px!important}
+.about-left [style*="aspect-ratio:3/4"] svg{display:none!important}
+
+.more-work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
+@media(max-width:768px){
+  .more-work-grid{grid-template-columns:1fr!important;gap:1rem!important}
+  .more-work-grid .ptitle{font-size:clamp(2rem,9vw,3rem)!important}
+  .more-work-grid .pimg{aspect-ratio:16/8!important}
+}
+.journey-table-wrap{display:block}
+.journey-cards{display:none}
+.jcard{border:1px solid var(--g2);background:var(--g1);border-radius:12px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.jcard-step{font-family:var(--fd);font-size:1.5rem;color:var(--wh);letter-spacing:.02em;line-height:1;padding-bottom:.75rem;border-bottom:1px solid var(--g2)}
+.jcard-row{display:flex;gap:.75rem;align-items:flex-start}
+.jcard-label{font-family:var(--fm);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bl);flex-shrink:0;width:44px;padding-top:.15rem}
+.jcard-val{font-size:.88rem;color:var(--g4);line-height:1.55}
+.jcard-design .jcard-val{color:var(--g3)}
+@media(max-width:768px){
+  .journey-table-wrap{display:none!important}
+  .journey-cards{display:flex!important;flex-direction:column;gap:1rem;margin-top:1rem}
+  .jcard-step{font-size:clamp(1.6rem,7vw,2.2rem)!important}
+  .jcard-val{font-size:.9rem!important}
+}
+.nav-screen-thumb{cursor:pointer}
+.nav-screen-img-wrap{position:relative;border:1px solid var(--g2);border-radius:10px;overflow:hidden;transition:border-color .2s,transform .2s}
+.nav-screen-thumb:hover .nav-screen-img-wrap{border-color:var(--bl);transform:translateY(-2px)}
+.nav-screen-overlay{position:absolute;inset:0;background:rgba(0,90,255,0);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s,background .2s}
+.nav-screen-thumb:hover .nav-screen-overlay{opacity:1;background:rgba(0,90,255,.18)}
+.nav-screen-label{font-family:var(--fm);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3);text-align:center;margin-top:.5rem;transition:color .2s}
+.nav-screen-thumb:hover .nav-screen-label{color:var(--bl)}
 </style>
 </head>
 <body>
@@ -295,7 +424,7 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
             <span class="bubble-num" style="font-family:'Bebas Neue',sans-serif;font-size:5rem;line-height:1;color:#fff">4</span>
             <span style="font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--bl);line-height:1">+</span>
           </div>
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 1rem;margin-top:.4rem">Years exp.</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 1rem;margin-top:.4rem">Years of experience</div>
         </div>
         <div class="hbubble" data-r="145" data-target="100" style="position:absolute;width:290px;height:290px;border-radius:50%;background:rgba(0,90,255,.09);border:1px solid rgba(0,90,255,.22);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div style="display:flex;align-items:baseline;gap:4px">
@@ -425,11 +554,11 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
 
 <!-- ABOUT -->
 <div id="page-about" class="page">
-  <section style="padding:clamp(4rem,8vw,8rem) 0"><div class="cnt" style="padding-top:4rem">
+  <section style="padding:clamp(2rem,4vw,4rem) 0"><div class="cnt" style="padding-top:2rem">
     <div class="about-grid">
       <div class="about-left">
         <div class="lbl" style="margin-bottom:1.4rem;color:var(--bl)">About</div>
-        <div style="width:100%;max-width:320px;margin-bottom:2rem;border-radius:16px;overflow:hidden;border:1px solid var(--g2);background:var(--g1);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center">
+        <div style="width:100%;max-width:260px;margin-bottom:1.5rem;border-radius:16px;overflow:hidden;border:1px solid var(--g2);background:var(--g1);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".15"><circle cx="40" cy="30" r="16" stroke="white" stroke-width="1.5"/><path d="M10 80 Q10 55 40 52 Q70 55 70 80" stroke="white" stroke-width="1.5" fill="none"/></svg>
         </div>
         <span class="abt">NO</span>
@@ -449,9 +578,9 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
           <div class="ablbl">AI in my workflow</div>
           <div class="aibadge">
             <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1L7.5 4.5H11L8.25 6.75L9.5 10.5L6 8.25L2.5 10.5L3.75 6.75L1 4.5H4.5L6 1Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
-            AI-Assisted Workflow
+            AI-Native Designer
           </div>
-          <p class="abtext">I use different AI tools depending on the task — Claude for layout reasoning and structure, ChatGPT for fast ideation, Lovable for quick prototyping, Gemini for research. The goal is always the same: reach better design decisions faster.</p>
+          <p class="abtext">AI is part of how I think, not just how I work. I choose tools based on what each does best — Claude for layout logic and content structure, ChatGPT for rapid ideation, Lovable for structural prototyping, Gemini for research and synthesis. I stay ahead of what's emerging, test new tools early, and integrate them only when they sharpen the outcome. The standard is always the same: better design decisions, faster.</p>
         </div>
         <div>
           <div class="ablbl">Principles</div>
@@ -500,23 +629,40 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
     <div class="csmeta">
       <div><div class="csml">Role</div><div class="csmv">UX/UI &amp; Web Designer</div></div>
       <div><div class="csml">Company</div><div class="csmv">Purpose Green</div></div>
-      <div><div class="csml">Timeline</div><div class="csmv">May 2025 — Present</div></div>
-      <div><div class="csml">Tools</div><div class="csmv">Figma, Webflow, Hotjar</div></div>
+      
+      <div><div class="csml">Tools</div><div class="csmv">Figma, Webflow</div></div>
+    </div>
+    <div style="margin-top:2rem">
+      <a class="btn" href="#pg-projects" onclick="setTimeout(function(){document.getElementById('pg-projects').scrollIntoView({behavior:'smooth',block:'start'})},50);return false">
+        <span>See projects</span>
+        <svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M6 1v8M2 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
   <div class="cssec">
-    <div class="cssl">Target Audience</div>
+    <div class="cssl">Personas</div>
     <div class="csst">The people using this</div>
     <div class="persona-cards">
       <div class="persona-card">
         <div class="persona-head">
-          <div class="persona-avatar"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="#141414"/><ellipse cx="32" cy="26" rx="11" ry="13" fill="#c8a882"/><path d="M12 64 Q12 44 32 42 Q52 44 52 64" fill="#1e2a3a"/><circle cx="50" cy="14" r="5" fill="#005aff" opacity=".9"/></svg></div>
+          <div class="persona-avatar"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="#0f1f35"/><circle cx="32" cy="32" r="32" fill="url(#bgM)"/><defs><radialGradient id="bgM" cx="60%" cy="0%" r="100%"><stop offset="0%" stop-color="#1a3a5c" stop-opacity=".8"/><stop offset="100%" stop-color="#0a1628" stop-opacity="0"/></radialGradient></defs><!-- corpo --><path d="M14 64 Q14 46 32 44 Q50 46 50 64" fill="#1e3a5a"/><path d="M22 44 L32 52 L42 44" fill="#162d45"/><!-- testa --><ellipse cx="32" cy="25" rx="11" ry="12.5" fill="#c4956a"/><!-- capelli corti grigi --><path d="M21 22 Q21 10 32 9 Q43 10 43 22 Q41 14 32 13 Q23 14 21 22Z" fill="#5a5560"/><!-- orecchie --><ellipse cx="21" cy="25" rx="2.2" ry="2.8" fill="#b8855e"/><ellipse cx="43" cy="25" rx="2.2" ry="2.8" fill="#b8855e"/><!-- naso --><path d="M30 27 Q32 30 34 27" stroke="#a87050" stroke-width="1.2" stroke-linecap="round" fill="none"/><!-- bocca --><path d="M28 32 Q32 35.5 36 32" stroke="#9a6040" stroke-width="1.3" stroke-linecap="round" fill="none"/><!-- badge --><circle cx="50" cy="14" r="7" fill="#005aff"/><path d="M47 14 L50 17 L54 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           <div class="persona-meta"><div class="persona-name">Marcus, 52</div><div class="persona-role">Portfolio Manager · Institutional Fund, Berlin</div></div>
         </div>
         <div class="persona-cols">
           <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Context</div><p class="bsm">Oversees a portfolio of 30+ commercial and residential properties across Germany. Answers to investors on ESG performance and long-term asset value.</p></div>
           <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Goals</div><p class="bsm">Understand portfolio-wide risk at a glance. Find service providers he can trust. Make renovation investment decisions backed by data, not guesswork.</p></div>
           <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Behaviour</div><p class="bsm">Scans before he reads. Arrives via LinkedIn or referral. Loses trust at visual noise or unclear hierarchy. Responds to concrete numbers and social proof.</p></div>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-head">
+          <div class="persona-avatar"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="#1a0d28"/><circle cx="32" cy="32" r="32" fill="url(#bgS)"/><defs><radialGradient id="bgS" cx="60%" cy="0%" r="100%"><stop offset="0%" stop-color="#3d1f5c" stop-opacity=".8"/><stop offset="100%" stop-color="#1a0d28" stop-opacity="0"/></radialGradient></defs><!-- corpo --><path d="M14 64 Q14 46 32 44 Q50 46 50 64" fill="#2d1640"/><path d="M22 44 L32 52 L42 44" fill="#241230"/><!-- testa --><ellipse cx="32" cy="25" rx="10.5" ry="12" fill="#e8c4a0"/><!-- capelli lunghi scuri --><path d="M21.5 20 Q21 9 32 8 Q43 9 42.5 20 Q40 12 32 11 Q24 12 21.5 20Z" fill="#2a1a0e"/><path d="M21 22 Q18 32 20 42" stroke="#2a1a0e" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M43 22 Q46 32 44 42" stroke="#2a1a0e" stroke-width="4" stroke-linecap="round" fill="none"/><!-- orecchie --><ellipse cx="21.5" cy="25" rx="2" ry="2.6" fill="#dcb88e"/><ellipse cx="42.5" cy="25" rx="2" ry="2.6" fill="#dcb88e"/><!-- naso --><path d="M30 27 Q32 30 34 27" stroke="#c89a72" stroke-width="1.2" stroke-linecap="round" fill="none"/><!-- bocca --><path d="M28.5 32 Q32 35.5 35.5 32" stroke="#b07850" stroke-width="1.3" stroke-linecap="round" fill="none"/><!-- badge --><circle cx="50" cy="14" r="7" fill="#005aff"/><path d="M47 14 L50 17 L54 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div class="persona-meta"><div class="persona-name">Sandra, 44</div><div class="persona-role">Asset Manager · Private Real Estate Family Office</div></div>
+        </div>
+        <div class="persona-cols">
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Context</div><p class="bsm">Manages individual asset performance for a family office with mixed-use properties. Balances renovation budgets, tenant relations, and compliance requirements.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Goals</div><p class="bsm">Quickly assess which properties need attention. Get actionable recommendations she can take to ownership. Stay compliant without needing to become an energy expert.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Behaviour</div><p class="bsm">Detail-oriented but time-poor. Trusts structured, visual information over walls of text. Will drop off if the next step is not obvious.</p></div>
         </div>
       </div>
     </div>
@@ -527,7 +673,7 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
     <p class="bmd" style="max-width:640px">Claude for layout reasoning and content structure, ChatGPT for fast copy alternatives, Lovable for structural prototyping, Gemini for research. Each tool where it makes sense — always in service of a better design decision.</p>
   </div>
   <div class="cssec" style="border-bottom:0;padding-bottom:6rem">
-    <div class="cssl">Projects</div>
+    <div class="cssl" id="pg-projects">Projects</div>
     <div class="csst">Select a project</div>
     <div class="sub-grid">
       <div class="sub-card" onclick="goC('pg-nav')">
@@ -535,7 +681,7 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
         <div class="sub-num">01</div><div class="sub-type">Redesign</div>
         <div class="sub-title">Structuring a Complex<br>Navigation System</div>
         <p class="sub-desc">Replaced a basic flat navbar with a structured mega menu — icons, product banners, and clearer user paths.</p>
-        <div class="tags" style="margin-top:.5rem"><span class="tag">Navigation</span><span class="tag">UX/UI</span><span class="tag">Redesign</span></div>
+        <div class="tags" style="margin-top:.5rem"><span class="tag">Navigation</span><span class="tag">UX/UI</span><span class="tag">Product</span><span class="tag">Redesign</span></div>
         <div class="sub-arrow"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
       </div>
       <div class="sub-card" onclick="goC('pg-ref')">
@@ -543,7 +689,7 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
         <div class="sub-num">02</div><div class="sub-type">Redesign</div>
         <div class="sub-title">From Text-Heavy to<br>Scannable Content System</div>
         <p class="sub-desc">Transformed a monotonous project list into a filterable, outcome-led case study system with visual data cards and CMS automation.</p>
-        <div class="tags" style="margin-top:.5rem"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag">CMS</span></div>
+        <div class="tags" style="margin-top:.5rem"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag">Product</span><span class="tag">CMS</span></div>
         <div class="sub-arrow"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
       </div>
       <div class="sub-card" onclick="goC('pg-camp')">
@@ -553,6 +699,58 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
         <p class="sub-desc">Full landing page built from scratch for a LinkedIn B2B campaign — structured for a pre-qualified audience.</p>
         <div class="tags" style="margin-top:.5rem"><span class="tag">Landing Page</span><span class="tag">Campaign</span><span class="tag">Conversion</span></div>
         <div class="sub-arrow"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+
+    <!-- Curiosity box -->
+    <div class="curiosity" style="margin-top:3rem">
+      <div class="curiosity-label">Curious about more?</div>
+      <div class="curiosity-title">Visual &amp; Marketing Work</div>
+      <p class="bsm" style="margin-bottom:1.5rem">Beyond UX and web, I also created social media assets, campaign visuals, and marketing materials for Purpose Green — expo banners, LinkedIn templates, "Meet me at" cards, and social posts.</p>
+      <img src="Social_Media.png" style="width:100%;display:block;border-radius:4px" alt="Social media banners, expo materials, campaign assets">
+    </div>
+  </div>
+
+  <!-- Beyond the screens -->
+  <div class="cssec">
+    <div class="cssl">Beyond the screens</div>
+    <div class="csst">Process, systems &amp; tooling</div>
+    <p class="bmd" style="max-width:660px;margin-bottom:2rem">Design at Purpose Green wasn't just about shipping screens — it was about making the whole team faster. I built infrastructure that lets marketing move independently, keeps Figma organised for cross-functional work, and removes recurring bottlenecks from the design process.</p>
+    <div class="cs3" style="margin-bottom:2rem">
+      <div class="obox">
+        <div class="otag">Landing Page System</div>
+        <div class="otitle">Modular templates,<br>not blank canvases</div>
+        <p class="odesc" style="margin-top:.6rem">Built a full library of pre-designed landing page sections in Figma — hero variations, content blocks, data highlights, CTA modules, testimonials, and footers. Marketing can now assemble a campaign page by plugging in copy and swapping images, without starting from scratch or waiting for a designer.</p>
+      </div>
+      <div class="obox">
+        <div class="otag" style="display:flex;align-items:center;gap:.4rem">Social Media Templates <span style="font-family:var(--fm);font-size:.44rem;color:var(--bl);border:1px solid rgba(0,90,255,.3);padding:.1rem .35rem;border-radius:99px;letter-spacing:.08em">BETA</span></div>
+        <div class="otitle">Figma Buzz banner<br>system</div>
+        <p class="odesc" style="margin-top:.6rem">Designed a complete social media template system inside Figma Buzz (still in beta) — 1080×1080 for LinkedIn posts, 1080×1350 for Instagram. Fully editable by non-designers: plug in headline, subheadline, CTA, swap the visual. No design knowledge needed, no approval delays for standard posts.</p>
+      </div>
+      <div class="obox">
+        <div class="otag">Figma Organisation</div>
+        <div class="otitle">One source of truth<br>for the website</div>
+        <p class="odesc" style="margin-top:.6rem">Reorganised the entire website Figma file by creating a dedicated "Current Website" page — a live, accurate overview of every page that exists on the site today. Eliminated confusion between old designs, new designs, and what's actually live. Faster for developers, faster for anyone joining the project.</p>
+      </div>
+    </div>
+    <div style="border:1px solid var(--g2);padding:1.75rem 2rem;background:var(--g1);display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;border-radius:14px">
+      <div>
+        <div class="lbl" style="color:var(--bl);margin-bottom:.65rem">The result</div>
+        <p class="bmd">The marketing team went from needing a designer for every banner and landing page, to operating independently on standard formats. My time shifted from repeating the same executions to designing new things that actually move the needle.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.65rem">
+        <div style="display:flex;align-items:center;gap:.85rem;padding:.75rem 1rem;border:1px solid var(--g2);border-radius:8px">
+          <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+          <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Landing pages assembled without designer involvement</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.85rem;padding:.75rem 1rem;border:1px solid var(--g2);border-radius:8px">
+          <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+          <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Social banners produced directly by marketing — zero back-and-forth</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.85rem;padding:.75rem 1rem;border:1px solid var(--g2);border-radius:8px">
+          <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+          <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Figma file reorganised — single source of truth for live website</span>
+        </div>
       </div>
     </div>
   </div>
@@ -567,11 +765,113 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
     <p class="cspos">Replacing a flat, basic navigation with a structured mega menu — better hierarchy, icons, product banners, and clearer paths for every visitor type.</p>
     <div class="tags" style="margin-bottom:2rem"><span class="tag">Navigation</span><span class="tag">UX/UI</span><span class="tag">Information Architecture</span><span class="tag">Redesign</span></div>
     <div class="csmeta"><div><div class="csml">Type</div><div class="csmv">Redesign</div></div><div><div class="csml">Collaboration</div><div class="csmv">Product &amp; Marketing teams</div></div></div>
+    <div style="margin-top:2.5rem">
+      <div style="margin-bottom:2rem">
+        <span style="font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g3);padding:.28rem .75rem;border:1px solid var(--g2);border-radius:99px">Before — Old navigation</span>
+        <div style="margin-top:.85rem;border:1px solid var(--g2);border-radius:6px;overflow:hidden;opacity:.7">
+          <img src="pg_nav_old.png" style="width:100%;display:block" alt="Old flat navigation bar">
+        </div>
+        <p style="font-family:var(--fm);font-size:.55rem;color:var(--g3);letter-spacing:.08em;margin-top:.5rem">Flat horizontal list — no hierarchy, no icons, no product context.</p>
+      </div>
+      <div style="margin-bottom:.85rem">
+        <span style="font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:#005aff;padding:.28rem .75rem;border:1px solid rgba(0,90,255,.25);background:rgba(0,90,255,.07);border-radius:99px">After — Navigation Bar 3.0 · Click any screen to expand</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem">
+        <div class="nav-screen-thumb" onclick="openLightbox('pg_nav_digitale.png','Digitale Analysen — Mega Menu')">
+          <div class="nav-screen-img-wrap"><img src="pg_nav_digitale.png" style="width:100%;display:block" alt="Digitale Analysen"><div class="nav-screen-overlay"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3h5M3 3v5M15 3h-5M15 3v5M3 15h5M3 15v-5M15 15h-5M15 15v-5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+          <p class="nav-screen-label">Digitale Analysen</p>
+        </div>
+        <div class="nav-screen-thumb" onclick="openLightbox('pg_nav_planen.png','Planen — Mega Menu')">
+          <div class="nav-screen-img-wrap"><img src="pg_nav_planen.png" style="width:100%;display:block" alt="Planen"><div class="nav-screen-overlay"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3h5M3 3v5M15 3h-5M15 3v5M3 15h5M3 15v-5M15 15h-5M15 15v-5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+          <p class="nav-screen-label">Planen</p>
+        </div>
+        <div class="nav-screen-thumb" onclick="openLightbox('pg_nav_umsetzen.png','Umsetzen — Mega Menu')">
+          <div class="nav-screen-img-wrap"><img src="pg_nav_umsetzen.png" style="width:100%;display:block" alt="Umsetzen"><div class="nav-screen-overlay"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3h5M3 3v5M15 3h-5M15 3v5M3 15h5M3 15v-5M15 15h-5M15 15v-5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+          <p class="nav-screen-label">Umsetzen</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">The old navigation was a flat horizontal list — no hierarchy, no visual anchors, no way to understand the product depth from the menu alone. As the platform grew with new services, the nav couldn't scale without becoming harder to read.</p></div><div><p class="bmd">I redesigned it from the information architecture up, working with both product and marketing teams to map the right structure. I then built the mega menu in Figma and worked directly with the developer on implementation.</p></div></div></div>
-  <div class="cssec"><div class="cssl">What wasn't working</div><div class="cs3"><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">No hierarchy</div><p class="bsm">All items had equal visual weight. Users couldn't quickly distinguish primary services from secondary tools.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">No visual anchors</div><p class="bsm">No icons, no banners, no product context. The nav communicated nothing about what the platform does.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Didn't scale</div><p class="bsm">Adding more items made it longer, not clearer. No room for product-level storytelling.</p></div></div></div>
-  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Scannability</div><div class="otitle">Icons + categories</div><div class="odesc">Users can orient themselves in the menu without reading every item.</div></div><div class="obox"><div class="otag">Product visibility</div><div class="otitle">Right-side banner</div><div class="odesc">Key products get dedicated visibility in the nav itself — no need to dig into sub-pages.</div></div><div class="obox"><div class="otag">Scalability</div><div class="otitle">Grows cleanly</div><div class="odesc">New service areas slot into existing categories without breaking the visual structure.</div></div></div></div>
-  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <div class="cssec">
+    <div class="cssl">Design Decisions</div>
+    <div class="csst">Component thinking, not just UI</div>
+    <div class="cs2">
+      <div>
+        <p class="bmd">Every element was designed as an independent, reusable Figma component with clearly documented states: default, hover, and active. Auto-layout throughout — so spacing and alignment are structural, never manual. Built for handoff from day one.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:.85rem">
+          <div class="pb"><div class="lbl" style="margin-bottom:.4rem;color:var(--g4)">Auto-layout throughout</div><p class="bsm">Every column, row, and item uses Figma auto-layout — spacing, alignment, and resizing are structural, not manual.</p></div>
+          <div class="pb"><div class="lbl" style="margin-bottom:.4rem;color:var(--g4)">Named states, not duplicates</div><p class="bsm">Default, hover, and active states defined within a single component using variants — one source of truth.</p></div>
+          <div class="pb"><div class="lbl" style="margin-bottom:.4rem;color:var(--g4)">Built for handoff</div><p class="bsm">Component naming, layer structure, and documentation were built with the developer in mind from the start.</p></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem">
+        <div style="border:1px solid var(--g2);border-radius:8px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.4);width:100%">
+          <img src="pg_nav_components.png" style="width:100%;display:block" alt="Figma component variants">
+        </div>
+        <p style="font-family:var(--fm);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3);text-align:center">Component variants — default / hover / active · Figma auto-layout</p>
+      </div>
+    </div>
+  </div>
+  <div class="cssec">
+    <div class="cssl">Approach</div>
+    <div class="csst">Architecture before aesthetics</div>
+    <p class="bmd" style="max-width:640px;margin-bottom:2rem">Before opening Figma, I mapped the full product structure with the product and marketing teams. The goal was to answer one question: what does a visitor need to understand in the first 3 seconds? From that, a clear hierarchy emerged — primary services, secondary tools, contextual CTAs, and a product spotlight panel.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem">
+      <div style="background:var(--g1);border:1px solid var(--g2);padding:1.25rem;border-radius:10px;text-align:center">
+        <div style="font-family:var(--fd);font-size:1.8rem;color:var(--bl);margin-bottom:.4rem">3</div>
+        <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);letter-spacing:.08em;text-transform:uppercase;line-height:1.5">Primary service categories</div>
+      </div>
+      <div style="background:var(--g1);border:1px solid var(--g2);padding:1.25rem;border-radius:10px;text-align:center">
+        <div style="font-family:var(--fd);font-size:1.8rem;color:var(--bl);margin-bottom:.4rem">1</div>
+        <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);letter-spacing:.08em;text-transform:uppercase;line-height:1.5">Product spotlight per dropdown</div>
+      </div>
+      <div style="background:var(--g1);border:1px solid var(--g2);padding:1.25rem;border-radius:10px;text-align:center">
+        <div style="font-family:var(--fd);font-size:1.8rem;color:var(--bl);margin-bottom:.4rem">2</div>
+        <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);letter-spacing:.08em;text-transform:uppercase;line-height:1.5">States per component variant</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Dev collaboration</div>
+    <div class="csst">Designed to be built, not just reviewed</div>
+    <div class="cs2">
+      <div>
+        <p class="bmd">Most design-dev friction happens when specs are incomplete or components aren't documented. I worked with the developer from the structure phase — not just at handoff. Every dropdown was defined as a self-contained Figma component with named variants, precise auto-layout specs, and interaction notes embedded directly in the file.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+          <div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;background:var(--g1);border:1px solid var(--g2);border-radius:10px">
+            <div style="width:6px;height:6px;background:var(--bl);border-radius:50%;flex-shrink:0;margin-top:.35rem"></div>
+            <div><div style="font-family:var(--fm);font-size:.6rem;color:var(--wh);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem">Named variants, not duplicates</div><p class="bsm">Default, hover, and active states live inside a single component. One source of truth — no ambiguity about which file version is current.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;background:var(--g1);border:1px solid var(--g2);border-radius:10px">
+            <div style="width:6px;height:6px;background:var(--bl);border-radius:50%;flex-shrink:0;margin-top:.35rem"></div>
+            <div><div style="font-family:var(--fm);font-size:.6rem;color:var(--wh);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem">Auto-layout throughout</div><p class="bsm">Every column, row, and icon slot uses Figma auto-layout. The developer could resize any element and the structure would hold — no pixel-pushing needed.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;background:var(--g1);border:1px solid var(--g2);border-radius:10px">
+            <div style="width:6px;height:6px;background:var(--bl);border-radius:50%;flex-shrink:0;margin-top:.35rem"></div>
+            <div><div style="font-family:var(--fm);font-size:.6rem;color:var(--wh);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem">Interaction notes in the file</div><p class="bsm">Hover timing, animation easing, and focus states were documented inside Figma — not in a separate Notion doc that gets ignored.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center">
+        <div style="border:1px solid var(--g2);border-radius:10px;overflow:hidden;width:100%;box-shadow:0 12px 40px rgba(0,0,0,.4)">
+          <img src="pg_nav_components.png" style="width:100%;display:block" alt="Figma component variants — default hover active">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Outcome</div>
+    <div class="csst">A nav that works as hard as the product</div>
+    <div class="outblocks">
+      <div class="obox"><div class="otag">Orientation</div><div class="otitle">3 seconds to understand the platform</div><div class="odesc">Icons, category labels, and product spotlights give visitors immediate context — no reading required.</div></div>
+      <div class="obox"><div class="otag">Scalability</div><div class="otitle">Grows without breaking</div><div class="odesc">New services slot into existing categories cleanly. The structure absorbs growth — it doesn't collapse under it.</div></div>
+      <div class="obox"><div class="otag">Handoff quality</div><div class="otitle">Zero back-and-forth with dev</div><div class="odesc">Complete component documentation and named variants meant the developer could implement without a single clarification call.</div></div>
+    </div>
+  </div>
+  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');setTimeout(function(){document.getElementById('pg-projects').scrollIntoView({behavior:'smooth',block:'start'})},300);return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 </div></div>
 
 <!-- PG REF -->
@@ -583,23 +883,112 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
     <p class="cspos">Redesigning a flat, text-heavy reference list into a filterable, outcome-led card system — with a CMS architecture that auto-generates every visual element from data.</p>
     <div class="tags" style="margin-bottom:2rem"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag">CMS Architecture</span><span class="tag">Data Visualization</span><span class="tag">Redesign</span></div>
     <div class="csmeta"><div><div class="csml">Type</div><div class="csmv">Redesign</div></div><div><div class="csml">Platform</div><div class="csmv">Webflow CMS</div></div></div>
-  </div>
-  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">The References page is where potential clients validate Purpose Green's track record. The old version was a static blog format — long-form text, no visual hierarchy, and critical data like CO₂ savings and renovation costs buried in paragraphs. Nobody was actually reading it.</p><div class="db" style="margin-top:1.2rem"><p>Hotjar scroll data showed 70–75% of users reached the first content block, but engagement dropped steeply below.</p></div></div><div><p class="bmd">My role covered the full redesign: information architecture, the card system, the energy bar component, and the CMS automation architecture. I worked directly with the Webflow developer to define how every visual element maps to a CMS field.</p></div></div></div>
-  <div class="cssec"><div class="cssl">CMS Architecture</div><div class="csst">Zero design work per new entry</div>
-    <div class="flow">
-      <div class="fnode"><div class="fbox"><div class="fbt">Marketing</div><div class="fbs">Inputs data fields</div></div><div class="flbl">CMS entry</div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Webflow CMS</div><div class="fbs">Stores all fields</div></div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Energy bar</div><div class="fbs">Auto-renders</div></div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Data chips</div><div class="fbs">CO₂, cost</div></div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Live page</div><div class="fbs">Zero design work</div></div></div>
+    <div style="margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+      <div>
+        <span style="font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g3);padding:.28rem .75rem;border:1px solid var(--g2);border-radius:99px;display:inline-block;margin-bottom:.85rem">Before — Text-heavy blog format</span>
+        <div style="border:1px solid var(--g2);border-radius:4px;overflow:hidden;opacity:.65">
+          <img src="Old_Reference_-_Text_Heavy.png" style="width:100%;display:block" alt="Before — old references page">
+        </div>
+      </div>
+      <div>
+        <span style="font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:#005aff;padding:.28rem .75rem;border:1px solid rgba(0,90,255,.25);background:rgba(0,90,255,.07);border-radius:99px;display:inline-block;margin-bottom:.85rem">After — My redesign</span>
+        <div style="border:1px solid var(--g2);border-radius:4px;overflow:hidden">
+          <img src="New_Latest_Card_Clicked.png" style="width:100%;display:block" alt="After — new reference design">
+        </div>
+      </div>
     </div>
   </div>
-  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Data clarity</div><div class="otitle">Numbers at a glance</div><div class="odesc">Energy class, CO₂ savings and renovation cost are visible before clicking.</div></div><div class="obox"><div class="otag">CMS automation</div><div class="otitle">Zero design per entry</div><div class="odesc">Marketing adds a new reference by filling in CMS fields. Every chart generates automatically.</div></div><div class="obox"><div class="otag">Scalability</div><div class="otitle">Grows without friction</div><div class="odesc">The system handles 5 or 50 references with identical visual consistency.</div></div></div></div>
-  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <div class="cssec">
+    <div class="cssl">The data behind the decision</div>
+    <div class="csst">The page had the right content.<br>Just the wrong structure.</div>
+    <div class="cs2">
+      <div>
+        <p class="bmd">Hotjar scroll maps told a clear story: 70–75% of users reached the first reference entry. Below that, engagement collapsed. The content wasn't wrong — the format was. A blog-style layout designed for editorial content was being used as a proof page for B2B decision-makers. Those are two completely different reading behaviours.</p>
+        <div style="margin-top:1.5rem;border:1px solid var(--g2);border-radius:12px;overflow:hidden">
+          <div style="background:var(--g1);padding:1rem 1.25rem;border-bottom:1px solid var(--g2)">
+            <div style="font-family:var(--fm);font-size:.56rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">Hotjar scroll data — old page</div>
+            <div style="display:flex;flex-direction:column;gap:.5rem">
+              <div style="display:flex;align-items:center;gap:.75rem">
+                <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);width:110px;flex-shrink:0">Above the fold</div>
+                <div style="flex:1;height:6px;background:var(--g2);border-radius:3px;overflow:hidden"><div style="width:95%;height:100%;background:var(--bl);border-radius:3px"></div></div>
+                <div style="font-family:var(--fm);font-size:.52rem;color:var(--wh);width:32px;text-align:right">95%</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem">
+                <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);width:110px;flex-shrink:0">First entry</div>
+                <div style="flex:1;height:6px;background:var(--g2);border-radius:3px;overflow:hidden"><div style="width:72%;height:100%;background:var(--bl);border-radius:3px"></div></div>
+                <div style="font-family:var(--fm);font-size:.52rem;color:var(--wh);width:32px;text-align:right">72%</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem">
+                <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);width:110px;flex-shrink:0">Second entry</div>
+                <div style="flex:1;height:6px;background:var(--g2);border-radius:3px;overflow:hidden"><div style="width:28%;height:100%;background:rgba(0,90,255,.4);border-radius:3px"></div></div>
+                <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);width:32px;text-align:right">28%</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:.75rem">
+                <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);width:110px;flex-shrink:0">Third entry</div>
+                <div style="flex:1;height:6px;background:var(--g2);border-radius:3px;overflow:hidden"><div style="width:9%;height:100%;background:rgba(0,90,255,.25);border-radius:3px"></div></div>
+                <div style="font-family:var(--fm);font-size:.52rem;color:var(--g3);width:32px;text-align:right">9%</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:.85rem 1.25rem;background:rgba(0,90,255,.04)">
+            <p style="font-family:var(--fm);font-size:.56rem;color:var(--g3);letter-spacing:.04em;line-height:1.6">Users were dropping off before seeing Purpose Green's strongest projects. The problem wasn't the projects — it was the format forcing people to read before they could decide what to read.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="bmd">My role covered the full redesign: information architecture, the card system, the energy bar component, and the CMS automation layer. I also worked directly with the Webflow developer to define how every visual element maps to a CMS field — so the system generates itself from data, with zero manual design work per entry.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+          <div style="padding:1rem 1.25rem;background:var(--g1);border:1px solid var(--g2);border-radius:10px">
+            <div style="font-family:var(--fm);font-size:.58rem;color:var(--wh);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem">Information architecture</div>
+            <p class="bsm">Restructured the page around how asset managers actually scan — energy class change visible before clicking, not after reading.</p>
+          </div>
+          <div style="padding:1rem 1.25rem;background:var(--g1);border:1px solid var(--g2);border-radius:10px">
+            <div style="font-family:var(--fm);font-size:.58rem;color:var(--wh);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem">CMS automation layer</div>
+            <p class="bsm">Defined the full field mapping with the developer — energy class, CO₂, cost, status all render automatically from CMS input.</p>
+          </div>
+          <div style="padding:1rem 1.25rem;background:var(--g1);border:1px solid var(--g2);border-radius:10px">
+            <div style="font-family:var(--fm);font-size:.58rem;color:var(--wh);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem">Filterable card system</div>
+            <p class="bsm">Designed a category filter (Wohnen / Gewerbe) and status badges that update automatically from CMS option values.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Designed for the decision-maker</div>
+    <div class="csst">Every element answers a specific question the asset manager is asking</div>
+    <p class="bmd" style="max-width:640px;margin-bottom:2rem">The target user — a portfolio manager or asset manager — arrives at the References page with one question: <em style="color:var(--wh);font-style:normal">"Has Purpose Green done this before, and did it work?"</em> The design is built to answer that in under 10 seconds, without requiring them to read a single paragraph.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem">
+      <div style="background:var(--g1);border:1px solid var(--g2);padding:1.5rem;border-radius:12px">
+        <div style="font-family:var(--fm);font-size:.58rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.65rem">Question 1 — "What type of property?"</div>
+        <p class="bsm">Filter chips (Wohnen / Gewerbe) at the top let users immediately narrow to relevant projects. One tap, no cognitive load.</p>
+      </div>
+      <div style="background:var(--g1);border:1px solid var(--g2);padding:1.5rem;border-radius:12px">
+        <div style="font-family:var(--fm);font-size:.58rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.65rem">Question 2 — "How much did energy improve?"</div>
+        <p class="bsm">The energy bar (e.g. G → B) is the first visual element on every card. The transformation is readable in under 2 seconds — no numbers needed.</p>
+      </div>
+      <div style="background:var(--g1);border:1px solid var(--g2);padding:1.5rem;border-radius:12px">
+        <div style="font-family:var(--fm);font-size:.58rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.65rem">Question 3 — "What were the actual numbers?"</div>
+        <p class="bsm">CO₂ savings, renovation cost, and surface area appear in a consistent 2×2 data grid. Same layout every card — scannable, comparable, no reading required.</p>
+      </div>
+      <div style="background:var(--g1);border:1px solid var(--g2);padding:1.5rem;border-radius:12px">
+        <div style="font-family:var(--fm);font-size:.58rem;color:var(--bl);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.65rem">Question 4 — "Is this project finished?"</div>
+        <p class="bsm">Status badges (Abgeschlossen / In Planung / Bewertet) are CMS-driven and visible on the card — so users know before clicking whether a project is a completed reference or a live case.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Outcome</div>
+    <div class="csst">A proof page that actually proves things</div>
+    <div class="outblocks">
+      <div class="obox"><div class="otag">Scan time</div><div class="otitle">Key data visible in &lt;10 sec</div><div class="odesc">Energy class, CO₂ savings, and project type are all readable before a single click — the card does the qualifying work.</div></div>
+      <div class="obox"><div class="otag">Automation</div><div class="otitle">Zero design per new entry</div><div class="odesc">Marketing adds a reference by filling CMS fields. Every chart, bar, and badge generates automatically — no designer needed.</div></div>
+      <div class="obox"><div class="otag">Scalability</div><div class="otitle">5 or 500 references</div><div class="odesc">Identical visual consistency at any scale. The system grows without maintenance — and without ever looking inconsistent.</div></div>
+    </div>
+  </div>
+  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');setTimeout(function(){document.getElementById('pg-projects').scrollIntoView({behavior:'smooth',block:'start'})},300);return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 </div></div>
 
 <!-- PG CAMPAIGN -->
@@ -611,11 +1000,26 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
     <p class="cspos">A full landing page built from scratch for a LinkedIn B2B campaign — designed for a pre-qualified audience and built around one conversion goal.</p>
     <div class="tags" style="margin-bottom:2rem"><span class="tag">Landing Page</span><span class="tag">Campaign</span><span class="tag">Conversion</span><span class="tag">From scratch</span></div>
     <div class="csmeta"><div><div class="csml">Type</div><div class="csmv">From scratch</div></div><div><div class="csml">Campaign</div><div class="csmv">LinkedIn — January 2026</div></div></div>
+    <div style="position:relative;width:100%;max-width:860px;margin:2rem auto 0">
+      <div style="background:#151515;border-radius:18px 18px 0 0;height:28px;display:flex;align-items:center;padding:0 .8rem;gap:.35rem;border:1px solid #252525;border-bottom:none">
+        <div style="width:8px;height:8px;border-radius:50%;background:#2a2a2a"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#2a2a2a"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#2a2a2a"></div>
+        <div style="flex:1;margin:0 .6rem;height:14px;background:#1e1e1e;border-radius:3px;display:flex;align-items:center;padding:0 .6rem"><span style="font-family:var(--fm);font-size:.38rem;color:#444;letter-spacing:.06em">purposegreen.de/portfolio-analyse</span></div>
+      </div>
+      <div id="lp-scroll" style="width:100%;aspect-ratio:16/9;overflow-y:scroll;overflow-x:hidden;border-radius:0 0 18px 18px;border:1px solid #252525;border-top:none;background:#fff;cursor:ns-resize;scrollbar-width:none;-ms-overflow-style:none;box-shadow:0 30px 70px rgba(0,0,0,.7)">
+        <img src="pg_scroll_page.png" style="width:100%;display:block;pointer-events:none;user-select:none" alt="Portfolio Analysis landing page — full scroll" draggable="false">
+      </div>
+      <div style="position:absolute;top:28px;right:7px;bottom:0;width:3px;background:rgba(255,255,255,.06);border-radius:3px;pointer-events:none">
+        <div id="lp-thumb" style="position:absolute;left:0;right:0;top:0;height:20%;background:rgba(255,255,255,.3);border-radius:3px"></div>
+      </div>
+      <p style="text-align:center;font-family:var(--fm);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--g3);margin-top:.75rem">↕ Scroll to explore the full page</p>
+    </div>
   </div>
   <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">The marketing team provided a first Figma draft with all the required content. It was functional but visually dense — not ready for a paid LinkedIn audience that makes a trust decision in seconds.</p></div><div><p class="bmd">After design, I worked directly with the developer to ensure accurate implementation and launched on time. Live within 48 hours of the campaign deadline.</p></div></div></div>
   <div class="cssec"><div class="cssl">User Flow</div><div class="flow"><div class="fnode"><div class="fbox"><div class="fbt">Clicks ad</div><div class="fbs">LinkedIn</div></div></div><div class="farr">→</div><div class="fnode"><div class="fbox"><div class="fbt">Hero + form</div><div class="fbs">Register directly</div></div></div><div class="farr">→</div><div class="fnode"><div class="fbox"><div class="fbt">Partner logos</div><div class="fbs">Trust signal</div></div></div><div class="farr">→</div><div class="fnode"><div class="fbox"><div class="fbt">Use cases</div></div></div><div class="farr">→</div><div class="fnode"><div class="fbox"><div class="fbt">Bottom CTA</div></div></div></div></div>
   <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Quality</div><div class="otitle">Campaign-ready</div><div class="odesc">Polished and aligned with Purpose Green's brand — ready for a paid B2B audience.</div></div><div class="obox"><div class="otag">Hierarchy</div><div class="otitle">One clear path</div><div class="odesc">Each section has one job and hands off to the next.</div></div><div class="obox"><div class="otag">Delivery</div><div class="otitle">Live in 48 hours</div><div class="odesc">Designed, reviewed, and handed to development within 48 hours of the launch deadline.</div></div></div></div>
-  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <div class="cs-cta"><div><div class="cs-cta-label">Purpose Green</div><div class="cs-cta-title">View more projects</div></div><a class="btn" href="#" onclick="goC('pg');setTimeout(function(){document.getElementById('pg-projects').scrollIntoView({behavior:'smooth',block:'start'})},300);return false"><span>View more from Purpose Green</span><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 </div></div>
 
 <!-- KRANUS HEALTH -->
@@ -627,55 +1031,207 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
     <p class="cspos">Designing a mobile app home screen for oncology patients — clear, calm, and built to be used daily during active treatment.</p>
     <div class="tags" style="margin-bottom:2rem"><span class="tag">Mobile</span><span class="tag">Healthcare UX</span><span class="tag">Product Design</span><span class="tag">App Design</span></div>
     <div class="csmeta"><div><div class="csml">Role</div><div class="csmv">Lead UX/UI &amp; Product Designer</div></div><div><div class="csml">Company</div><div class="csmv">Kranus Health</div></div><div><div class="csml">Platform</div><div class="csmv">iOS / Android</div></div></div>
-    <!-- App screens visual -->
-    <div style="display:flex;gap:2rem;justify-content:center;margin-top:2.5rem">
-      <div style="width:38%;max-width:240px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
-        <div style="aspect-ratio:9/19.5;width:100%;border-radius:28px;background:linear-gradient(160deg,#0d1a1d,#050d0f);border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:1.5rem">
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.55rem;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase">Day 21 / 90</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;letter-spacing:.04em">How are you today?</div>
-          <div style="display:flex;gap:.75rem">
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">😞</div>
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">😕</div>
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(0,90,255,.2);border:1px solid rgba(0,90,255,.5);display:flex;align-items:center;justify-content:center;font-size:1.1rem">😐</div>
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">🙂</div>
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">😊</div>
-          </div>
-          <div style="width:100%;border-top:1px solid rgba(255,255,255,.06);padding-top:1rem">
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Symptoms today</div>
-            <div style="display:flex;flex-wrap:wrap;gap:.35rem">
-              <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.48rem;border:1px solid rgba(0,90,255,.4);background:rgba(0,90,255,.12);color:rgba(0,90,255,.9);padding:.25rem .55rem;border-radius:99px">Fatigue</span>
-              <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.48rem;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);padding:.25rem .55rem;border-radius:99px">Nausea</span>
-              <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.48rem;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);padding:.25rem .55rem;border-radius:99px">Pain</span>
-            </div>
-          </div>
-        </div>
+    <div style="display:flex;gap:2.5rem;justify-content:center;margin-top:2.5rem">
+      <div style="width:38%;max-width:260px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
+        <img src="Non_cliccato.png" style="width:100%;display:block;border-radius:32px;box-shadow:0 20px 60px rgba(0,0,0,.65)" alt="App home screen — default state">
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Default state</span>
       </div>
-      <div style="width:38%;max-width:240px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
-        <div style="aspect-ratio:9/19.5;width:100%;border-radius:28px;background:linear-gradient(160deg,#0d1a1d,#050d0f);border:1px solid rgba(0,90,255,.2);box-shadow:0 20px 60px rgba(0,90,255,.12),0 20px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:1.5rem">
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.55rem;color:rgba(0,90,255,.7);letter-spacing:.1em;text-transform:uppercase">Check-in complete</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;letter-spacing:.04em;text-align:center">Your care team<br>has been notified</div>
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(0,90,255,.15);border:1px solid rgba(0,90,255,.35);display:flex;align-items:center;justify-content:center">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="#005aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div style="width:100%;border-top:1px solid rgba(255,255,255,.06);padding-top:1rem">
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">Medication taken?</div>
-            <div style="display:flex;gap:.5rem">
-              <div style="flex:1;padding:.5rem;background:rgba(0,90,255,.2);border:1px solid rgba(0,90,255,.4);border-radius:8px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;color:rgba(0,90,255,.9)">✓ Yes</div>
-              <div style="flex:1;padding:.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;color:rgba(255,255,255,.35)">No</div>
-            </div>
-          </div>
-        </div>
+      <div style="width:38%;max-width:260px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
+        <img src="Cliccato.png" style="width:100%;display:block;border-radius:32px;box-shadow:0 20px 60px rgba(0,0,0,.65)" alt="App home screen — selected state">
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Selected state</span>
       </div>
     </div>
   </div>
-  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">Kranus Health was building a companion app for oncology patients in active treatment. I designed the home screen from scratch — working with the product team and clinical advisors to create something that patients would actually use every day, without adding to their cognitive load.</p></div><div><p class="bmd">The home screen is the most important view: clear, calm, one obvious next step. Check-in, symptom chips, and medication confirmation — all from a single view.<div class="db" style="margin-top:1rem"><p>Constraint: accessible design for users aged 45–75, including those with chemo-related cognitive effects.</p></div></p></div></div></div>
-  <div class="cssec"><div class="cssl">Design Decisions</div><div class="cs3"><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Emotion scale with icons</div><p class="bsm">5 visual emoji-style options from very unwell to great — no text label needed. Accessible at a glance even when fatigued.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Symptom chips</div><p class="bsm">Plain language labels (Fatigue, Bloating, Pain) — not clinical terms. Pre-populated with the most common treatment symptoms.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Single-page interaction</div><p class="bsm">Check-in, medication confirmation, and suggested content visible on one screen — no deep navigation required.</p></div></div></div>
-  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Clarity</div><div class="otitle">One screen, one job</div><div class="odesc">The daily routine is completable without opening any sub-pages — check-in, medication, done.</div></div><div class="obox"><div class="otag">Accessibility</div><div class="otitle">Plain language throughout</div><div class="odesc">No clinical terminology. Visual options where possible. Everything readable at standard font size.</div></div><div class="obox"><div class="otag">Tone</div><div class="otitle">Calm, not clinical</div><div class="odesc">The interface communicates care rather than data-collection.</div></div></div></div>
+  <div class="cssec">
+    <div class="cssl">Context &amp; Role</div>
+    <div class="cs2">
+      <div>
+        <p class="bmd">Kranus Health was building a companion app for oncology patients undergoing active treatment — a context where every interaction has emotional weight. I was brought in as Lead UX/UI Designer to design the home screen from scratch, working alongside the product team and clinical advisors.</p>
+        <div class="db" style="margin-top:1.25rem"><p>The core constraint: patients aged 45–75, many experiencing chemo-related fatigue and cognitive effects. Every tap, every label, every visual decision had to work for someone having a bad day — not just an average one.</p></div>
+      </div>
+      <div>
+        <p class="bmd">The home screen is the most loaded view in the app — it's the first thing a patient sees every morning, and it needs to guide them through a check-in without feeling like a form. Calm, clear, one obvious next step at a time.</p>
+        <div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:.65rem">
+          <div style="display:flex;align-items:center;gap:.85rem;padding:.8rem 1.1rem;background:var(--g1);border:1px solid var(--g2);border-radius:8px">
+            <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+            <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Lead designer — home screen, check-in flow, component system</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.85rem;padding:.8rem 1.1rem;background:var(--g1);border:1px solid var(--g2);border-radius:8px">
+            <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+            <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Collaborated with clinical advisors on language and interaction logic</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.85rem;padding:.8rem 1.1rem;background:var(--g1);border:1px solid var(--g2);border-radius:8px">
+            <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+            <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Designed for iOS &amp; Android — accessibility-first from day one</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Personas</div>
+    <div class="csst">Designed for two people — both under pressure</div>
+    <div class="persona-cards">
+      <div class="persona-card">
+        <div class="persona-head">
+          <div class="persona-avatar"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="#081a10"/><circle cx="32" cy="32" r="32" fill="url(#bgT)"/><defs><radialGradient id="bgT" cx="60%" cy="0%" r="100%"><stop offset="0%" stop-color="#1a4a2a" stop-opacity=".8"/><stop offset="100%" stop-color="#081a10" stop-opacity="0"/></radialGradient></defs><!-- corpo --><path d="M14 64 Q14 46 32 44 Q50 46 50 64" fill="#123820"/><path d="M22 44 L32 52 L42 44" fill="#0d2c18"/><!-- testa --><ellipse cx="32" cy="25" rx="11" ry="12.5" fill="#d4a880"/><!-- capelli bianchi --><path d="M21 22 Q21 10 32 9 Q43 10 43 22 Q41 13 32 12 Q23 13 21 22Z" fill="#c8c0b8"/><!-- orecchie --><ellipse cx="21" cy="25" rx="2.2" ry="2.8" fill="#c89a6a"/><ellipse cx="43" cy="25" rx="2.2" ry="2.8" fill="#c89a6a"/><!-- naso --><path d="M30 27 Q32 30 34 27" stroke="#b88058" stroke-width="1.2" stroke-linecap="round" fill="none"/><!-- bocca neutra --><path d="M29 32 Q32 34 35 32" stroke="#a07048" stroke-width="1.3" stroke-linecap="round" fill="none"/><!-- badge --><circle cx="50" cy="14" r="7" fill="#005aff"/><path d="M47 14 L50 17 L54 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div class="persona-meta"><div class="persona-name">Thomas, 61</div><div class="persona-role">Patient · Active chemotherapy, Berlin</div></div>
+        </div>
+        <div class="persona-cols">
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Context</div><p class="bsm">Undergoing chemotherapy for colorectal cancer. Living at home, checking in with his care team remotely. Experiences fatigue, occasional brain fog, and fluctuating symptoms day to day.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Goals</div><p class="bsm">Complete his daily check-in quickly without it feeling like medical admin. Feel heard by his care team. Know that someone is paying attention to how he's doing.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Constraints</div><p class="bsm">Low energy on bad days. Can't process complex interfaces. Needs plain language — no clinical jargon. One obvious action at a time, or he won't complete it.</p></div>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-head">
+          <div class="persona-avatar"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="#060e14"/><circle cx="32" cy="32" r="32" fill="url(#bgD)"/><defs><radialGradient id="bgD" cx="60%" cy="0%" r="100%"><stop offset="0%" stop-color="#0d3a48" stop-opacity=".9"/><stop offset="100%" stop-color="#060e14" stop-opacity="0"/></radialGradient></defs><!-- corpo --><path d="M14 64 Q14 46 32 44 Q50 46 50 64" fill="#0e2e3c"/><path d="M22 44 L32 52 L42 44" fill="#0a2430"/><!-- testa --><ellipse cx="32" cy="25" rx="10.5" ry="12" fill="#d4a078"/><!-- capelli corti scuri --><path d="M21.5 21 Q22 9 32 8 Q42 9 42.5 21 Q40 12 32 11 Q24 12 21.5 21Z" fill="#1e1008"/><path d="M21.5 21 Q20 26 21 30" stroke="#1e1008" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M42.5 21 Q44 26 43 30" stroke="#1e1008" stroke-width="3.5" stroke-linecap="round" fill="none"/><!-- orecchie --><ellipse cx="21.5" cy="25" rx="2" ry="2.6" fill="#c49068"/><ellipse cx="42.5" cy="25" rx="2" ry="2.6" fill="#c49068"/><!-- naso --><path d="M30 27 Q32 30 34 27" stroke="#b07848" stroke-width="1.2" stroke-linecap="round" fill="none"/><!-- bocca --><path d="M28.5 32 Q32 35 35.5 32" stroke="#9a6438" stroke-width="1.3" stroke-linecap="round" fill="none"/><!-- badge --><circle cx="50" cy="14" r="7" fill="#005aff"/><path d="M47 14 L50 17 L54 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div class="persona-meta"><div class="persona-name">Dr. Müller, 38</div><div class="persona-role">Oncology Nurse · University Hospital, Hamburg</div></div>
+        </div>
+        <div class="persona-cols">
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Context</div><p class="bsm">Manages 15–20 remote oncology patients in parallel. Reviews daily check-in data each morning. Needs to spot deterioration early — before it becomes a crisis requiring emergency intervention.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Goals</div><p class="bsm">See which patients need attention today at a glance. Trust that incoming data is complete and accurate. Intervene earlier and more efficiently than phone-based follow-up allows.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Constraints</div><p class="bsm">No time for tools that require training. Incomplete check-ins are worse than none — they create false reassurance. Any friction that stops patients completing the flow directly reduces her ability to do her job.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">User Flow</div>
+    <div class="csst">Daily check-in — step by step</div>
+    <div class="flow">
+      <div class="fnode"><div class="fbox"><div class="fbt">Open app</div><div class="fbs">Notification or habit</div></div><div class="flbl">Entry</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Dashboard</div><div class="fbs">Day counter + greeting</div></div><div class="flbl">Orientation</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Select mood</div><div class="fbs">5-option scale</div></div><div class="flbl">Mood check</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Log symptoms</div><div class="fbs">Tap chips</div></div><div class="flbl">Symptom log</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Med confirm</div><div class="fbs">Yes / No</div></div><div class="flbl">Med check</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Done</div><div class="fbs">Data sent to care team</div></div><div class="flbl">Complete</div></div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">User Journey</div>
+    <div class="csst">What the patient feels, step by step</div>
+
+    <!-- Desktop: tabella normale -->
+    <div class="journey-table-wrap" style="overflow-x:auto">
+      <table class="jtbl">
+        <thead>
+          <tr>
+            <th>Step</th>
+            <th>What the user does</th>
+            <th>What they feel</th>
+            <th>Design response</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="stg">Opens app</span></td>
+            <td>Sees their name, a day counter, one clear question</td>
+            <td>Tired, wants this to be quick</td>
+            <td>Warm greeting. "Day 21/90" creates a sense of progress and journey — not just a daily chore.</td>
+          </tr>
+          <tr>
+            <td><span class="stg">Selects mood</span></td>
+            <td>Taps one of 5 facial expression icons</td>
+            <td>Relieved — no text to write, no scale to interpret</td>
+            <td>Visual scale, zero reading required. One tap and it's done.</td>
+          </tr>
+          <tr>
+            <td><span class="stg">Logs symptoms</span></td>
+            <td>Taps the symptom chips that apply today</td>
+            <td>Can actually find the right words — names are familiar</td>
+            <td>Plain language, not clinical terms. Most common chemo symptoms shown first.</td>
+          </tr>
+          <tr>
+            <td><span class="stg">Medication confirm</span></td>
+            <td>Taps "Yes, I did" or "No, I didn't"</td>
+            <td>Simple. Clear. Done.</td>
+            <td>Two large buttons, no ambiguity. Immediate visual feedback on tap.</td>
+          </tr>
+          <tr>
+            <td><span class="stg">Sees suggested content</span></td>
+            <td>Scrolls past a personalised article or tip</td>
+            <td>Feels supported, not just monitored</td>
+            <td>"Suggested for You" connects the check-in to something useful — the app gives something back.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile: cards verticali -->
+    <div class="journey-cards">
+      <div class="jcard">
+        <div class="jcard-step">Opens app</div>
+        <div class="jcard-row"><span class="jcard-label">Does</span><span class="jcard-val">Sees their name, a day counter, one clear question</span></div>
+        <div class="jcard-row"><span class="jcard-label">Feels</span><span class="jcard-val">Tired, wants this to be quick</span></div>
+        <div class="jcard-row jcard-design"><span class="jcard-label">Design</span><span class="jcard-val">"Day 21/90" creates a sense of progress — not just a daily chore.</span></div>
+      </div>
+      <div class="jcard">
+        <div class="jcard-step">Selects mood</div>
+        <div class="jcard-row"><span class="jcard-label">Does</span><span class="jcard-val">Taps one of 5 facial expression icons</span></div>
+        <div class="jcard-row"><span class="jcard-label">Feels</span><span class="jcard-val">Relieved — no text to write, no scale to interpret</span></div>
+        <div class="jcard-row jcard-design"><span class="jcard-label">Design</span><span class="jcard-val">Visual scale, zero reading required. One tap and it's done.</span></div>
+      </div>
+      <div class="jcard">
+        <div class="jcard-step">Logs symptoms</div>
+        <div class="jcard-row"><span class="jcard-label">Does</span><span class="jcard-val">Taps the chips that apply today</span></div>
+        <div class="jcard-row"><span class="jcard-label">Feels</span><span class="jcard-val">Can find the right words — names are familiar</span></div>
+        <div class="jcard-row jcard-design"><span class="jcard-label">Design</span><span class="jcard-val">Plain language, not clinical terms. Most common symptoms shown first.</span></div>
+      </div>
+      <div class="jcard">
+        <div class="jcard-step">Medication confirm</div>
+        <div class="jcard-row"><span class="jcard-label">Does</span><span class="jcard-val">Taps "Yes, I did" or "No, I didn't"</span></div>
+        <div class="jcard-row"><span class="jcard-label">Feels</span><span class="jcard-val">Simple. Clear. Done.</span></div>
+        <div class="jcard-row jcard-design"><span class="jcard-label">Design</span><span class="jcard-val">Two large buttons, no ambiguity. Immediate visual feedback.</span></div>
+      </div>
+      <div class="jcard">
+        <div class="jcard-step">Sees suggested content</div>
+        <div class="jcard-row"><span class="jcard-label">Does</span><span class="jcard-val">Scrolls past a personalised article or tip</span></div>
+        <div class="jcard-row"><span class="jcard-label">Feels</span><span class="jcard-val">Supported, not just monitored</span></div>
+        <div class="jcard-row jcard-design"><span class="jcard-label">Design</span><span class="jcard-val">"Suggested for You" — the app gives something useful back.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Design Decisions</div>
+    <div class="csst">Every choice made against a bad day</div>
+    <p class="bmd" style="max-width:640px;margin-bottom:2rem">The constraint wasn't "make it simple." It was: <em style="color:var(--wh);font-style:normal">make it completable by someone who is exhausted, in pain, and has no patience for confusion.</em> That standard changed every single decision.</p>
+    <div class="cs3">
+      <div class="pb">
+        <div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Emotion scale with icons</div>
+        <p class="bsm">5 visual emoji-style options from very unwell to great — no text label needed. Accessible at a glance even when fatigued. One tap captures the most important signal of the day.</p>
+      </div>
+      <div class="pb">
+        <div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Symptom chips</div>
+        <p class="bsm">Plain language labels (Fatigue, Bloating, Pain) — not clinical terms. Pre-populated with the most common treatment symptoms so patients tap rather than type.</p>
+      </div>
+      <div class="pb">
+        <div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Single-page interaction</div>
+        <p class="bsm">Check-in, medication confirmation, and suggested content visible on one screen — no deep navigation required. The entire routine is completable in under 60 seconds.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Outcome</div>
+    <div class="outblocks">
+      <div class="obox"><div class="otag">Clarity</div><div class="otitle">One screen, one job</div><div class="odesc">The daily routine is completable without opening any sub-pages — check-in, medication, done. No navigation, no friction.</div></div>
+      <div class="obox"><div class="otag">Accessibility</div><div class="otitle">Plain language throughout</div><div class="odesc">No clinical terminology. Visual options where possible. Everything readable at standard font size — designed for a 70-year-old on a bad day.</div></div>
+      <div class="obox"><div class="otag">Tone</div><div class="otitle">Calm, not clinical</div><div class="odesc">The interface communicates care rather than data collection — which matters when users are dealing with something genuinely difficult.</div></div>
+    </div>
+  </div>
   <div class="cssec" style="border-bottom:0;padding-bottom:5rem">
     <div class="cssl">More Work</div><div class="csst">Explore other projects</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+    <div class="more-work-grid">
       <a class="pcard" href="javascript:void(0)" onclick="goC('pg')" style="text-decoration:none;color:inherit">
         <div class="pimg"><div class="img-placeholder" style="background:linear-gradient(135deg,#0b170d,#0a0a0a)"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><rect x="2" y="4" width="32" height="28" rx="2" stroke="white" stroke-width="1.5"/></svg></div></div>
         <div class="pinfo"><div class="ptop"><div class="ptitle">Purpose Green</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div><p class="pdesc">Navigation redesign, data-driven page structures, campaign landing pages</p><div class="tags"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag bl">AI-Assisted</span></div></div>
@@ -696,67 +1252,172 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
     <div class="dlg" style="margin-bottom:.75rem">Time Tracking<br>App</div>
     <p class="cspos">Designing a time tracking app for freelancers and contractors from scratch — built to make logging hours as frictionless as possible, while giving users the insights they actually need.</p>
     <div class="tags" style="margin-bottom:2rem"><span class="tag">App Design</span><span class="tag">Product Design</span><span class="tag">UX/UI</span><span class="tag">From scratch</span></div>
-    <div class="csmeta"><div><div class="csml">Role</div><div class="csmv">UX/UI, Visual &amp; Product Designer</div></div><div><div class="csml">Company</div><div class="csmv">Expertlead</div></div><div><div class="csml">Timeline</div><div class="csmv">Jan 2021 — Oct 2023</div></div></div>
-    <!-- App screens -->
-    <div style="display:flex;gap:1.5rem;justify-content:center;margin-top:2.5rem">
-      <div style="width:28%;max-width:200px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
-        <div style="aspect-ratio:9/19.5;width:100%;border-radius:24px;background:linear-gradient(160deg,#111,#0a0a0a);border:1px solid rgba(255,255,255,.07);box-shadow:0 16px 48px rgba(0,0,0,.5);display:flex;flex-direction:column;padding:1.25rem;gap:.75rem">
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase">Dashboard</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:white">32h 14m</div>
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.45rem;color:rgba(255,255,255,.35)">This week</div>
-          <div style="flex:1;border-top:1px solid rgba(255,255,255,.05);padding-top:.75rem;display:flex;flex-direction:column;gap:.5rem">
-            <div style="background:rgba(0,90,255,.12);border:1px solid rgba(0,90,255,.2);padding:.5rem .7rem;border-radius:6px"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;color:rgba(0,90,255,.8)">Acme Corp · 18h</div></div>
-            <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:.5rem .7rem;border-radius:6px"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;color:rgba(255,255,255,.4)">InnoTech · 14h</div></div>
-          </div>
-        </div>
+    <div class="csmeta"><div><div class="csml">Role</div><div class="csmv">UX/UI, Visual &amp; Product Designer</div></div><div><div class="csml">Company</div><div class="csmv">Expertlead</div></div></div>
+    <div style="display:flex;gap:1.5rem;justify-content:center;margin-top:2.5rem;align-items:flex-start">
+      <div style="width:30%;max-width:220px;display:flex;flex-direction:column;align-items:center;gap:.65rem">
+        <img src="Dashboard_Overview.png" style="width:100%;display:block;border-radius:28px;box-shadow:0 16px 48px rgba(0,0,0,.6)" alt="Dashboard">
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Dashboard</span>
       </div>
-      <div style="width:28%;max-width:200px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
-        <div style="aspect-ratio:9/19.5;width:100%;border-radius:24px;background:linear-gradient(160deg,#111,#0a0a0a);border:1px solid rgba(0,90,255,.2);box-shadow:0 16px 48px rgba(0,90,255,.1),0 16px 48px rgba(0,0,0,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.25rem;gap:.75rem">
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(0,90,255,.7);letter-spacing:.1em;text-transform:uppercase">Timer running</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:white;letter-spacing:.04em">02:34:18</div>
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;color:rgba(255,255,255,.4)">Acme Corp</div>
-          <div style="width:52px;height:52px;border-radius:50%;background:rgba(0,90,255,.15);border:1px solid rgba(0,90,255,.35);display:flex;align-items:center;justify-content:center;cursor:pointer">
-            <div style="width:14px;height:14px;background:#005aff;border-radius:2px"></div>
-          </div>
-        </div>
+      <div style="width:30%;max-width:220px;display:flex;flex-direction:column;align-items:center;gap:.65rem">
+        <img src="START_Time_Tracking-1.png" style="width:100%;display:block;border-radius:28px;box-shadow:0 16px 48px rgba(0,0,0,.6)" alt="Timer running">
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Timer</span>
       </div>
-      <div style="width:28%;max-width:200px;display:flex;flex-direction:column;align-items:center;gap:.75rem">
-        <div style="aspect-ratio:9/19.5;width:100%;border-radius:24px;background:linear-gradient(160deg,#111,#0a0a0a);border:1px solid rgba(255,255,255,.07);box-shadow:0 16px 48px rgba(0,0,0,.5);display:flex;flex-direction:column;padding:1.25rem;gap:.75rem">
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.5rem;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase">Monthly · Nov</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:white">128h / 160h</div>
-          <div style="width:100%;height:4px;background:rgba(255,255,255,.06);border-radius:2px"><div style="width:80%;height:4px;background:#005aff;border-radius:2px"></div></div>
-          <div style="flex:1;display:flex;flex-direction:column;gap:.4rem;border-top:1px solid rgba(255,255,255,.05);padding-top:.75rem">
-            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;color:rgba(255,255,255,.4)">Acme Corp</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;color:white">72h</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;color:rgba(255,255,255,.4)">InnoTech</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;color:white">56h</span></div>
-          </div>
-        </div>
+      <div style="width:30%;max-width:220px;display:flex;flex-direction:column;align-items:center;gap:.65rem">
+        <img src="Dashboard_Overview_Monthly.png" style="width:100%;display:block;border-radius:28px;box-shadow:0 16px 48px rgba(0,0,0,.6)" alt="Monthly insights">
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)">Insights</span>
       </div>
     </div>
   </div>
-  <div class="cssec"><div class="cssl">Context &amp; Role</div><div class="cs2"><div><p class="bmd">Expertlead needed a time tracking tool built specifically for their freelancer network — not a generic app, but something that understood how contractors actually work: multiple clients, hourly billing, monthly reporting. I designed it end-to-end, from research and personas to high-fidelity screens.</p><div class="db" style="margin-top:1.2rem"><p>The core design challenge: time tracking is perceived as admin. The goal was to remove every possible source of friction.</p></div></div><div><p class="bmd">I ran the full design process — user research, competitive analysis, information architecture, wireframes, and high-fidelity UI. I also built the component library for the app within the Expertlead design system.</p></div></div></div>
-  <div class="cssec"><div class="cssl">The core problem</div><div class="cs3"><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Tracking felt like work</div><p class="bsm">Existing tools required too many taps, too many fields. Freelancers were logging retroactively — inaccurate and frustrating.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">No useful overview</div><p class="bsm">Raw time logs without structure. No per-client breakdown, no weekly patterns.</p></div><div class="pb"><div class="lbl" style="margin-bottom:.6rem;color:var(--g4)">Month-end was manual</div><p class="bsm">Freelancers were copy-pasting data into spreadsheets. The app didn't connect logging to reporting.</p></div></div></div>
-  <div class="cssec"><div class="cssl">User Flow</div><div class="csst">The daily tracking loop</div>
-    <div class="flow">
-      <div class="fnode"><div class="fbox"><div class="fbt">Open app</div><div class="fbs">Home screen</div></div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Start timer</div><div class="fbs">2 taps</div></div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Work</div><div class="fbs">Timer runs</div></div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Stop + tag</div><div class="fbs">Project confirm</div></div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Daily summary</div></div></div>
-      <div class="farr">→</div>
-      <div class="fnode"><div class="fbox"><div class="fbt">Monthly report</div><div class="fbs">Auto-generated</div></div></div>
+  <div class="cssec">
+    <div class="cssl">Context &amp; Role</div>
+    <div class="cs2">
+      <div>
+        <p class="bmd">Expertlead needed a time tracking tool built specifically for their freelancer network — not a generic app, but something that understood how contractors actually work: multiple clients, hourly billing, monthly reporting. I designed it end-to-end, from research and personas to high-fidelity screens.</p>
+        <div class="db" style="margin-top:1.2rem"><p>The core design challenge: time tracking is perceived as admin. The goal was to remove every possible source of friction — so that logging time felt as natural as checking your phone, not like filling out a form.</p></div>
+      </div>
+      <div>
+        <p class="bmd">I ran the full design process — user research, competitive analysis, information architecture, wireframes, and high-fidelity UI. I also built the component library for the app within the Expertlead design system, ensuring visual consistency across product and web.</p>
+      </div>
     </div>
   </div>
-  <div class="cssec"><div class="cssl">Outcome</div><div class="outblocks"><div class="obox"><div class="otag">Speed</div><div class="otitle">Full log in under 30 sec</div><div class="odesc">The 2-tap timer and contextual suggestions made daily tracking fast enough that users actually did it in the moment.</div></div><div class="obox"><div class="otag">Clarity</div><div class="otitle">Insights as a core view</div><div class="odesc">Hours per client, weekly patterns, contracted vs logged — all visible in one screen.</div></div><div class="obox"><div class="otag">System</div><div class="otitle">Part of the design system</div><div class="odesc">All app components were built as part of the Expertlead design system — reusable across product and web.</div></div></div></div>
+
+  <div class="cssec">
+    <div class="cssl">The Freelancers</div>
+    <div class="csst">Who this app is built for</div>
+    <div class="persona-cards">
+      <div class="persona-card">
+        <div class="persona-head">
+          <div class="persona-avatar"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="#140800"/><circle cx="32" cy="32" r="32" fill="url(#bgA)"/><defs><radialGradient id="bgA" cx="60%" cy="0%" r="100%"><stop offset="0%" stop-color="#3d2008" stop-opacity=".9"/><stop offset="100%" stop-color="#140800" stop-opacity="0"/></radialGradient></defs><!-- corpo --><path d="M14 64 Q14 46 32 44 Q50 46 50 64" fill="#2a1408"/><path d="M22 44 L32 52 L42 44" fill="#1e0e04"/><!-- testa --><ellipse cx="32" cy="25" rx="11" ry="12.5" fill="#a87040"/><!-- capelli corti scuri --><path d="M21 22 Q21 10 32 9 Q43 10 43 22 Q41 13 32 12 Q23 13 21 22Z" fill="#120800"/><!-- orecchie --><ellipse cx="21" cy="25" rx="2.2" ry="2.8" fill="#9a6035"/><ellipse cx="43" cy="25" rx="2.2" ry="2.8" fill="#9a6035"/><!-- naso --><path d="M30 27 Q32 31 34 27" stroke="#886028" stroke-width="1.3" stroke-linecap="round" fill="none"/><!-- bocca --><path d="M28 33 Q32 36 36 33" stroke="#784820" stroke-width="1.3" stroke-linecap="round" fill="none"/><!-- badge --><circle cx="50" cy="14" r="7" fill="#005aff"/><path d="M47 14 L50 17 L54 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div class="persona-meta"><div class="persona-name">Amir, 34</div><div class="persona-role">Senior Freelance Developer · Expertlead Network, Berlin</div></div>
+        </div>
+        <div class="persona-cols">
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Context</div><p class="bsm">Works across 2–3 client projects simultaneously. Bills by the hour and submits monthly reports to Expertlead. Tracking time is a requirement, not a preference — but he resents tools that slow him down.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Goals</div><p class="bsm">Start and stop a timer in one tap. Know at the end of the day how many hours he's logged per project. Submit his monthly summary without having to reconstruct it manually.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Constraints</div><p class="bsm">Zero tolerance for complexity. Forgets to log if the app isn't fast. If setup takes longer than 30 seconds — he won't use it.</p></div>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-head">
+          <div class="persona-avatar"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="#1a0510"/><circle cx="32" cy="32" r="32" fill="url(#bgMa)"/><defs><radialGradient id="bgMa" cx="60%" cy="0%" r="100%"><stop offset="0%" stop-color="#4a1030" stop-opacity=".9"/><stop offset="100%" stop-color="#1a0510" stop-opacity="0"/></radialGradient></defs><!-- corpo --><path d="M14 64 Q14 46 32 44 Q50 46 50 64" fill="#2e0c20"/><path d="M22 44 L32 52 L42 44" fill="#240818"/><!-- testa --><ellipse cx="32" cy="25" rx="10.5" ry="12" fill="#f0c8a0"/><!-- capelli biondi/castani lunghi --><path d="M21.5 20 Q22 8 32 7 Q42 8 42.5 20 Q40 11 32 10 Q24 11 21.5 20Z" fill="#8a6020"/><path d="M21 22 Q17 35 19 46" stroke="#8a6020" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M43 22 Q47 35 45 46" stroke="#8a6020" stroke-width="5" stroke-linecap="round" fill="none"/><!-- orecchie --><ellipse cx="21.5" cy="25" rx="2" ry="2.6" fill="#e4b88a"/><ellipse cx="42.5" cy="25" rx="2" ry="2.6" fill="#e4b88a"/><!-- naso --><path d="M30 27 Q32 30 34 27" stroke="#d09870" stroke-width="1.2" stroke-linecap="round" fill="none"/><!-- bocca --><path d="M28.5 32 Q32 36 35.5 32" stroke="#c07858" stroke-width="1.3" stroke-linecap="round" fill="none"/><!-- badge --><circle cx="50" cy="14" r="7" fill="#005aff"/><path d="M47 14 L50 17 L54 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <div class="persona-meta"><div class="persona-name">Maria, 29</div><div class="persona-role">UX Designer · Freelance via Expertlead, Munich</div></div>
+        </div>
+        <div class="persona-cols">
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Context</div><p class="bsm">Splits her time between two long-term clients with different rate structures. At month-end, she manually reconciles everything — a process she finds painful and error-prone.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Goals</div><p class="bsm">See a clear breakdown of hours per client, per week. Identify quickly if she's under or over her agreed hours. Export a clean summary she can send directly to clients.</p></div>
+          <div><div style="font-family:var(--fm);font-size:.62rem;color:var(--bl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Constraints</div><p class="bsm">Doesn't trust data she can't easily verify. If the monthly report looks off — she'll do it manually anyway, making the app useless.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Design Decisions</div>
+    <div class="csst">Minimum input, maximum clarity</div>
+    <div class="cs2">
+      <div style="display:flex;flex-direction:column;gap:.85rem">
+        <div class="pb"><div class="lbl" style="margin-bottom:.5rem;color:var(--g4)">2-tap timer start</div><p class="bsm">The dashboard shows a single prominent action: start tracking. One tap to open, one tap to confirm the project — and you're live. No form, no required fields, no friction at entry.</p></div>
+        <div class="pb"><div class="lbl" style="margin-bottom:.5rem;color:var(--g4)">Contextual project suggestions</div><p class="bsm">The app learns which projects you typically work on at which time of day. The most likely project appears pre-selected — most of the time, zero manual selection needed.</p></div>
+        <div class="pb"><div class="lbl" style="margin-bottom:.5rem;color:var(--g4)">Progressive daily summary</div><p class="bsm">At the end of each working session, a lightweight summary screen shows total hours logged, project breakdown, and a one-tap confirmation. The data is structured before it becomes a report.</p></div>
+        <div class="pb"><div class="lbl" style="margin-bottom:.5rem;color:var(--g4)">Monthly insights as a first-class view</div><p class="bsm">Not buried in settings — insights are a core tab. Per-client hours, weekly averages, and a direct comparison against contracted hours. Everything a freelancer needs before submitting their report.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem">
+          <img src="Dashboard_Overview.png" style="width:100%;display:block;border-radius:24px;box-shadow:0 12px 36px rgba(0,0,0,.5)" alt="Dashboard">
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3)">Dashboard</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem">
+          <img src="START_Time_Tracking-1.png" style="width:100%;display:block;border-radius:24px;box-shadow:0 12px 36px rgba(0,0,0,.5)" alt="Timer running">
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3)">Timer running</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">User Flow</div>
+    <div class="csst">The daily tracking loop</div>
+    <div class="flow">
+      <div class="fnode"><div class="fbox"><div class="fbt">Open app</div><div class="fbs">Home screen</div></div><div class="flbl">Entry</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Start timer</div><div class="fbs">2 taps</div></div><div class="flbl">Tracking</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Work</div><div class="fbs">Timer runs</div></div><div class="flbl">Background</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Stop + tag</div><div class="fbs">Project confirm</div></div><div class="flbl">Log</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Daily summary</div><div class="fbs">Hours per project</div></div><div class="flbl">Review</div></div>
+      <div class="farr">→</div>
+      <div class="fnode"><div class="fbox"><div class="fbt">Monthly report</div><div class="fbs">Auto-generated</div></div><div class="flbl">Submit</div></div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Key Screens</div>
+    <div class="csst">High fidelity — all journeys</div>
+    <p class="bmd" style="max-width:560px;margin-bottom:2rem">Every screen covers a specific step in the user journey — from first login to end-of-month reporting. No decorative screens — every view has a job.</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem">
+        <div style="width:100%;aspect-ratio:9/19.5;border-radius:20px;overflow:hidden;background:#0a0a0a"><img src="Log_In.png" style="width:100%;display:block" alt="Login"></div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);text-align:center">01 — Login</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem">
+        <div style="width:100%;aspect-ratio:9/19.5;border-radius:20px;overflow:hidden;background:#0a0a0a"><img src="Dashboard_Overview.png" style="width:100%;display:block" alt="Dashboard"></div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);text-align:center">02 — Dashboard</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem">
+        <div style="width:100%;aspect-ratio:9/19.5;border-radius:20px;overflow:hidden;background:#0a0a0a"><img src="START_Time_Tracking-1.png" style="width:100%;display:block" alt="Timer"></div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);text-align:center">03 — Timer</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem">
+        <div style="width:100%;aspect-ratio:9/19.5;border-radius:20px;overflow:hidden;background:#0a0a0a"><img src="Sum_Up_Tasks.png" style="width:100%;display:block" alt="Sum Up"></div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);text-align:center">04 — Sum Up</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem">
+        <div style="width:100%;aspect-ratio:9/19.5;border-radius:20px;overflow:hidden;background:#0a0a0a"><img src="Dashboard_Overview_Monthly.png" style="width:100%;display:block" alt="Insights"></div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);text-align:center">05 — Insights</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Also at Expertlead</div>
+    <div class="csst">Design system &amp; web</div>
+    <div class="cs2">
+      <div>
+        <p class="bmd">The Time Tracking App was one part of a broader product role. In parallel, I built the Expertlead design system from scratch — token structures, component libraries, and documentation used across product and marketing. I also designed and continuously improved the company website.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.65rem">
+        <div style="display:flex;align-items:center;gap:.85rem;padding:.8rem 1rem;border:1px solid var(--g2);border-radius:8px">
+          <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+          <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Design system built from scratch — tokens, components, documentation</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.85rem;padding:.8rem 1rem;border:1px solid var(--g2);border-radius:8px">
+          <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+          <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Company website — designed and continuously improved</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.85rem;padding:.8rem 1rem;border:1px solid var(--g2);border-radius:8px">
+          <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+          <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Marketing assets — banners, one-pagers, social media, animations</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.85rem;padding:.8rem 1rem;border:1px solid var(--g2);border-radius:8px">
+          <div style="width:5px;height:5px;background:var(--bl);border-radius:50%;flex-shrink:0"></div>
+          <span style="font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--g4)">Figma and Adobe Creative Suite across all deliverables</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cssec">
+    <div class="cssl">Outcome</div>
+    <div class="outblocks">
+      <div class="obox"><div class="otag">Speed</div><div class="otitle">Full log in under 30 sec</div><div class="odesc">The 2-tap timer and contextual suggestions made daily tracking fast enough that users actually did it in the moment, not retroactively.</div></div>
+      <div class="obox"><div class="otag">Clarity</div><div class="otitle">Insights as a core view</div><div class="odesc">Hours per client, weekly patterns, contracted vs logged — all visible in one screen. No manual reconciliation needed.</div></div>
+      <div class="obox"><div class="otag">System</div><div class="otitle">Part of the design system</div><div class="odesc">All app components were built as part of the Expertlead design system — reusable across product and web, consistent from day one.</div></div>
+    </div>
+  </div>
   <div class="cssec" style="border-bottom:0;padding-bottom:5rem">
     <div class="cssl">More Work</div><div class="csst">Explore other projects</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem">
+    <div class="more-work-grid">
       <a class="pcard" href="javascript:void(0)" onclick="goC('pg')" style="text-decoration:none;color:inherit">
         <div class="pimg"><div class="img-placeholder" style="background:linear-gradient(135deg,#0b170d,#0a0a0a)"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" opacity=".2"><rect x="2" y="4" width="32" height="28" rx="2" stroke="white" stroke-width="1.5"/></svg></div></div>
         <div class="pinfo"><div class="ptop"><div class="ptitle">Purpose Green</div><div class="parr"><svg class="ico" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div></div><p class="pdesc">Navigation redesign, data-driven page structures, campaign landing pages</p><div class="tags"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag bl">AI-Assisted</span></div></div>
@@ -978,8 +1639,31 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbo
   var mx=-100,my=-100,rx=-100,ry=-100,entered=false;
   document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';if(!entered){rx=mx;ry=my;entered=true;}},{passive:true});
   (function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
-  document.addEventListener('mouseover',function(e){var t=e.target.closest('a,button,.pcard,.sub-card,.cli,.expitem,.av');cd.style.width=t?'13px':'9px';cd.style.height=t?'13px':'9px';cr.style.width=t?'50px':'36px';cr.style.height=t?'50px':'36px';},{passive:true});
+  document.addEventListener('mouseover',function(e){
+    var t=e.target.closest('a,button,.pcard,.sub-card,.cli,.expitem,.av,.nav-screen-thumb');
+    cd.style.width=t?'13px':'9px';
+    cd.style.height=t?'13px':'9px';
+    cr.style.width=t?'50px':'36px';
+    cr.style.height=t?'50px':'36px';
+  },{passive:true});
 })();
+// LP scroll sync
+(function(){
+  var el=document.getElementById('lp-scroll');
+  var thumb=document.getElementById('lp-thumb');
+  if(!el||!thumb)return;
+  function sync(){
+    var ratio=el.clientHeight/el.scrollHeight;
+    var h=Math.max(0.06,ratio)*100;
+    var max=el.scrollHeight-el.clientHeight;
+    var pos=max>0?(el.scrollTop/max)*(100-h):0;
+    thumb.style.height=h.toFixed(1)+'%';
+    thumb.style.top=pos.toFixed(1)+'%';
+  }
+  el.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('load',sync);
+})();
+
 </script>
 </body>
 </html>
