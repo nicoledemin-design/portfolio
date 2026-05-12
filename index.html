@@ -186,7 +186,7 @@ nav.sc{background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-color:var
 .nav-screen-thumb:hover .nav-screen-label{color:var(--bl)}
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(8px)}
 #lb.open{opacity:1;pointer-events:all}
-#lb-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.8)}
+#lb-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.8);display:block;opacity:1}
 #lb-caption{font-family:var(--fm);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:1.25rem}
 #lb-close{position:absolute;top:1.5rem;right:1.5rem;width:40px;height:40px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,background .2s}
 #lb-close:hover{border-color:var(--bl);background:rgba(0,90,255,.15)}
@@ -1705,13 +1705,10 @@ function openLightboxGallery(i){
 function lbShow(){
   var img = document.getElementById('lb-img');
   var item = lbGallery[lbIndex];
-  img.style.opacity='0';
   img.src = item.src;
+  img.style.opacity = '1';
   document.getElementById('lb-caption').textContent = item.caption;
   document.getElementById('lb-counter').textContent = (lbIndex+1) + ' / ' + lbGallery.length;
-  img.onload = function(){ img.style.opacity='1'; };
-  // fallback in case image is already cached
-  if(img.complete && img.naturalWidth) img.style.opacity='1';
 }
 function lbNav(dir){
   lbIndex = (lbIndex + dir + lbGallery.length) % lbGallery.length;
