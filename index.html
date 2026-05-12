@@ -1706,12 +1706,12 @@ function lbShow(){
   var img = document.getElementById('lb-img');
   var item = lbGallery[lbIndex];
   img.style.opacity='0';
-  setTimeout(function(){
-    img.src = item.src;
-    document.getElementById('lb-caption').textContent = item.caption;
-    document.getElementById('lb-counter').textContent = (lbIndex+1) + ' / ' + lbGallery.length;
-    img.style.opacity='1';
-  }, 150);
+  img.src = item.src;
+  document.getElementById('lb-caption').textContent = item.caption;
+  document.getElementById('lb-counter').textContent = (lbIndex+1) + ' / ' + lbGallery.length;
+  img.onload = function(){ img.style.opacity='1'; };
+  // fallback in case image is already cached
+  if(img.complete && img.naturalWidth) img.style.opacity='1';
 }
 function lbNav(dir){
   lbIndex = (lbIndex + dir + lbGallery.length) % lbGallery.length;
