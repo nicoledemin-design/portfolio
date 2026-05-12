@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0a0a">
 <meta property="og:image" content="https://nicoledemin.com/Theme-Card-Preview.png">
-<meta property="og:title" content="Nicole De Min — UX/UI & Web Designer, Berlin">
-<meta property="og:description" content="UX/UI and web designer based in Berlin.">
+<meta property="og:title" content="Nicole De Min — UX/UI & Product Designer, Berlin">
+<meta property="og:description" content="UX/UI and product designer based in Berlin.">
 <meta property="og:url" content="https://nicoledemin.com">
-  <title>Nicole De Min — UX/UI & Web Designer, Berlin</title>
+  <title>Nicole De Min — UX/UI & Product Designer, Berlin</title>
 <style>
 /* Bebas Neue — self-hosted, zero flash sul titolo principale */
 @font-face {
@@ -26,7 +26,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;background:#0a0a0a}
 :root{
-  --bk:#0a0a0a;--wh:#f4f3ef;--g1:#141414;--g2:#222;--g3:#6e6e6e;--g4:#b0aea8;
+  --bk:#0a0a0a;--wh:#e6e6e6;--g1:#141414;--g2:#222;--g3:#6e6e6e;--g4:#b0aea8;
   --bl:#005aff;--fd:'Bebas Neue',sans-serif;--fb:'DM Sans',sans-serif;--fm:'Plus Jakarta Sans',sans-serif;
 }
 body{background:var(--bk);color:var(--wh);font-family:var(--fb);font-weight:300;line-height:1.6;overflow-x:hidden;cursor:none}
@@ -63,7 +63,7 @@ nav.sc{background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-color:var
 .ico{width:12px;height:12px;flex-shrink:0}
 #home-s{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(1.5rem,4vw,4rem);padding-top:7rem;position:relative;overflow:hidden}
 .hbg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,90,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(0,90,255,.028) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;mask-image:linear-gradient(to bottom,transparent,black 25%,black 65%,transparent)}
-.htitle{font-family:var(--fd);font-size:clamp(3.8rem,9.5vw,11rem);line-height:.88;letter-spacing:-.02em;color:var(--wh);display:block}
+.htitle{font-family:var(--fd);font-size:clamp(3.8rem,9.5vw,11rem);line-height:.88;letter-spacing:-.02em;color:#e6e6e6;display:block}
 .houtline{font-family:var(--fd);font-size:clamp(3.8rem,9.5vw,11rem);line-height:.88;letter-spacing:-.02em;display:block;color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.13)}
 .hbot{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--g2);display:flex;flex-direction:column;align-items:flex-start;gap:1.5rem;max-width:680px}
 .sh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid var(--g2)}
@@ -406,12 +406,12 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
 <div id="page-home" class="page on">
   <section id="home-s" class="cnt">
     <div class="hbg"></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;min-height:80vh">
       <div style="display:flex;flex-direction:column;justify-content:flex-end">
         <div class="lbl" style="margin-bottom:2rem">Where UX meets strong visual design</div>
         <div>
           <span class="htitle">UX/UI &amp;</span>
-          <span class="houtline">WEB</span>
+          <span class="htitle" style="color:var(--bl)">PRODUCT</span>
           <span class="htitle">DESIGNER</span>
         </div>
         <div class="hbot">
@@ -422,26 +422,86 @@ footer{padding:2rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--g2);displa
           </a>
         </div>
       </div>
-      <div id="hero-bubbles" style="position:relative;height:520px;">
-        <div class="hbubble" data-r="130" data-target="4" style="position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div style="display:flex;align-items:baseline;gap:4px">
-            <span class="bubble-num" style="font-family:'Bebas Neue',sans-serif;font-size:5rem;line-height:1;color:#fff">4</span>
-            <span style="font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--bl);line-height:1">+</span>
+      <div style="display:flex;align-items:center;justify-content:center;height:100%;padding-top:3rem;">
+        <div id="illus-wrap" style="position:relative;display:inline-flex;">
+          <svg width="460" height="660" viewBox="0 0 426 765" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-height:660px;width:auto">
+<ellipse cx="168" cy="734" rx="168" ry="31" fill="#E6E6E6"/>
+<path d="M338 567.582L326 529.582L354 511.582L370 561.582L338 567.582Z" fill="#EAC49A"/>
+<path d="M420.855 605.271C426.199 601.54 423.142 589.857 420.946 584.482L327.059 581.987C325.992 587.18 321.97 599.809 325.268 604.959C330.987 613.89 335.862 605.861 366.228 610.37C396.595 614.88 414.176 609.936 420.855 605.271Z" fill="#343333"/>
+<path d="M374.138 555.096C369.713 550.971 367.646 551.848 367.166 552.802C364.158 556.676 356.404 564.591 349.449 565.25C342.495 565.909 335.404 558.022 332.728 553.996C325.817 558.558 325.675 580.965 327.481 583.913C329.287 586.861 345.437 590.19 353.294 590.135C361.151 590.081 420.111 601.93 421.126 586.401C422.451 566.14 398.277 571.82 391.813 570.594C385.35 569.368 379.669 560.253 374.138 555.096Z" fill="#1A1A1A"/>
+<path d="M332.5 550L327 532.5L355.5 516L362.5 538.5L332.5 550Z" fill="#C9956A"/>
+<path d="M116.881 453L129.881 462V509H116.881V453Z" fill="#343333"/>
+<rect x="118.881" y="509" width="9" height="235" fill="#343333"/>
+<path d="M120.454 508.411L128.782 505L225.843 741.97L215.45 741.971L120.454 508.411Z" fill="#343333"/>
+<path d="M116.998 506L125.395 509.237L35.8815 742.034L26 742.034L116.998 506Z" fill="#343333"/>
+<path d="M219.5 635.582L217.5 659.582L214 679.5L242.5 687.082L251.5 647.582L219.5 635.582Z" fill="#EAC49A"/>
+<path d="M285.935 739.604C292.073 737.413 292.205 725.338 291.503 719.574L201.596 692.415C199.198 697.144 191.988 708.265 193.812 714.102C196.974 724.225 203.793 717.765 231.897 730.121C260 742.477 278.263 742.343 285.935 739.604Z" fill="#343333"/>
+<path d="M254.099 678.888C250.918 673.743 248.693 674.043 247.978 674.837C244.055 677.782 234.489 683.372 227.607 682.174C220.725 680.976 215.964 671.499 214.444 666.91C206.575 669.488 200.53 691.065 201.495 694.385C202.46 697.705 217.161 705.174 224.755 707.193C232.348 709.211 286.098 736.186 291.172 721.474C297.791 702.279 272.974 701.385 267.063 698.498C261.151 695.611 258.075 685.321 254.099 678.888Z" fill="#1A1A1A"/>
+<path d="M217.5 659L219 642L251.5 647L247.5 665.5L217.5 659Z" fill="#C9956A"/>
+<path d="M281 351.583C281 413.715 240.5 464.083 152 464.083C58 464.083 24.401 413.699 23.0001 351.583C20.0005 218.583 100.755 310.583 172 310.583C243.245 310.583 281 289.451 281 351.583Z" fill="#1D1D1D"/>
+<path d="M185.5 287.082C181.5 281.082 180.5 254.582 180.5 242.082C174.334 235.082 160.2 225.782 153 244.582C145.8 263.382 160.667 298.082 169 313.082L206.5 310.082C201.167 304.916 189.5 293.082 185.5 287.082Z" fill="#EAC49A"/>
+<path d="M107 120.082L110.6 75.082L135 99.082V136.082L107 132.082V120.082Z" fill="#EAC49A"/>
+<path d="M171.5 630.244L259.57 371.082H325.5L293.519 661.082L171.5 630.244Z" fill="#E6E6E6"/>
+<path d="M88.5 275.582L91.0791 258.082H152.432L157.5 274.582L88.5 275.582Z" fill="#2A2A2A"/>
+<path d="M173.346 11.5224C182.48 15.9845 171.302 35.8034 164.571 45.1551L110.447 97.5087L108.386 107.083L86.8845 104.083C93.7585 102.281 106.647 95.8975 101.23 78.0072C94.4593 55.6443 97.5088 43.3975 114.819 21.8282C132.129 0.258911 161.928 5.94476 173.346 11.5224Z" fill="#E6E6E6"/>
+<path d="M162.83 46.5226C168.087 41.2683 172.68 21.4283 174.32 12.1651C182.566 17.887 200.579 34.4682 201.706 55.4022C203.384 86.583 187.126 99.1986 173.384 108.583C162.39 116.091 163.722 125.543 170.884 130.083L134.384 108.583L163.286 47.103C160.943 49.0988 157.573 51.7769 162.83 46.5226Z" fill="#343333"/>
+<path d="M105.548 46.4665C114.784 39.5884 119.467 47.2644 120.654 51.9621C123.39 56.916 150.768 49.1014 164.114 44.5748C158.923 52.7802 168.798 72.6431 174.384 81.5489C164.806 95.6388 150.441 110.204 134.879 104.128C122.429 99.2673 114.955 78.9573 112.774 69.4099C98.9659 61.8629 102.203 50.9697 105.548 46.4665Z" fill="#EAC49A"/>
+<ellipse cx="138.909" cy="66.2455" rx="4.69634" ry="5.21816" transform="rotate(6.85717 138.909 66.2455)" fill="black"/>
+<ellipse cx="163.898" cy="81.3389" rx="4.17453" ry="4.69634" transform="rotate(6.85717 163.898 81.3389)" fill="black"/>
+<path d="M148.594 59.5268C147.077 59.3444 144.078 56.919 141.924 54.7973C140.584 53.4777 138.955 52.3037 138.156 50.6013C137.811 49.8651 137.997 49.3177 139.292 49.4733C142.4 49.8472 145.964 50.8014 149.279 53.8279C152.594 56.8544 151.184 59.8383 148.594 59.5268Z" fill="black"/>
+<path d="M115.886 79.5825L110.447 97.5084C109.899 102.068 126.192 118.498 136.098 118.988L136.886 104.583C130.824 103.433 120.59 88.0319 115.886 79.5825Z" fill="#C9956A"/>
+<ellipse cx="110.894" cy="54.4651" rx="3.65271" ry="4.69634" transform="rotate(6.85717 110.894 54.4651)" fill="#C9956A"/>
+<path d="M148.999 417.082C57.3987 438.681 70.4985 330.749 88.4985 274.582L156.499 272.082L175.999 316.082H300.499C323.499 316.082 346.499 382.582 399.499 500.582L290.999 548.582L265.999 383.582C227.499 403.082 172 411.658 148.999 417.082Z" fill="#E6E6E6"/>
+<path d="M253 389.5L266 383.5L291 548.5L307 541.5L306 550.5C281.5 560.5 284.681 562.149 279 547C274.5 535 256 464.5 243 418C244.095 414.855 244.75 412.996 245.366 411.256L253 389.5Z" fill="#1A1A1A"/>
+<path d="M76.9998 280.582L79.9998 249.582L46 239.082C45.8333 251.415 45.3998 278.582 44.9998 288.582C44.4998 301.082 46.4998 304.082 51.9998 309.082C57.4998 314.082 142 312.082 153 312.582C164 313.082 182.5 303.082 188.5 300.082C194.5 297.082 208 293.082 214.5 293.082C219.7 293.082 229.333 303.082 233.5 308.082L239 296.082C235.5 292.249 225.7 283.282 214.5 278.082C200.5 271.582 178.5 289.582 158.5 291.082C142.5 292.282 97.4998 284.582 76.9998 280.582Z" fill="#EAC49A"/>
+<path d="M204.527 309.671L115 316.479V323.811C115 327.162 118.839 328 120.759 328C178.524 324.858 295.1 318.469 299.289 318.05C303.477 317.631 306.269 314.384 307.142 312.813C315.693 286.28 333.319 231.748 335.413 225.883C337.508 220.018 333.494 218.202 331.225 218.028C304.699 218.202 249.866 218.447 242.746 218.028C235.625 217.609 232.798 222.043 232.275 224.312L204.527 309.671Z" fill="#343333"/>
+<ellipse cx="269.868" cy="270.517" rx="9.26783" ry="8.81485" transform="rotate(11.7457 269.868 270.517)" fill="#A19CA2"/>
+<path d="M45.5 263L46 242.5L79.5 251.5L78 270.5L45.5 263Z" fill="#C9956A"/>
+<path d="M62.5 143.082C66.5 135.482 87.8333 124.582 98 120.082L142.5 123.082C150.5 127.082 167.6 136.682 172 143.082C176.4 149.482 196.333 211.749 208.5 235.082L155 252.447L152 259.582H91L90.4684 255.582L26 237.582C38 200.582 58.5 150.682 62.5 143.082Z" fill="#1D5EF6"/>
+<path d="M99.4422 122.119C96.1803 118.966 103.32 115.724 107.297 114.497C109.349 116.201 115.147 119.907 121.925 121.098C128.702 122.288 134.107 119.565 135.962 118.055C137.88 118.862 142.639 121.27 146.327 124.444C150.937 128.411 136.715 135.183 122.356 133.937C107.997 132.691 103.519 126.06 99.4422 122.119Z" fill="#343333"/>
+<path d="M90 184.082C91 191.082 89 234.582 90.5001 255.582L76 251.582L90 184.082Z" fill="#2A2A2A"/>
+<path d="M162.932 180.262C175.5 200 168.5 220 160 226L158.831 231.064L155 252.5C160.5 250.5 160 251 165 249.5C168.845 241.486 173.211 220.763 174.5 213.5C177.121 198.731 168.538 183.965 162.932 180.262Z" fill="#2A2A2A"/>
+<path d="M152.5 258.5L155 252.5L180.5 244L181 261.5L156 270L152.5 258.5Z" fill="#C9956A"/>
+          </svg>
+          <div id="illus-credit" style="position:fixed;background:rgba(10,10,10,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid #222;border-radius:99px;padding:.55rem 1.2rem;display:flex;align-items:center;gap:.6rem;white-space:nowrap;opacity:0;pointer-events:none;transform:scale(0.9);transition:opacity .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);z-index:9999;">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.56rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#6e6e6e">© Illustration by</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#e6e6e6">Nicole De Min</span>
+            <span style="width:5px;height:5px;background:#005aff;border-radius:50%;flex-shrink:0;display:inline-block"></span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.56rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#6e6e6e">All rights reserved</span>
           </div>
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 1rem;margin-top:.4rem">Years of experience</div>
-        </div>
-        <div class="hbubble" data-r="145" data-target="100" style="position:absolute;width:290px;height:290px;border-radius:50%;background:rgba(0,90,255,.09);border:1px solid rgba(0,90,255,.22);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div style="display:flex;align-items:baseline;gap:4px">
-            <span class="bubble-num" style="font-family:'Bebas Neue',sans-serif;font-size:5.8rem;line-height:1;color:#fff">100</span>
-            <span style="font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:var(--bl);line-height:1">%</span>
-          </div>
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 1rem;margin-top:.4rem">Dev handoff quality</div>
-        </div>
-        <div class="hbubble" data-r="110" data-target="0" style="position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <span class="bubble-num" style="font-family:'Bebas Neue',sans-serif;font-size:4.4rem;line-height:1;color:#fff">0</span>
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.46rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;padding:0 .75rem;margin-top:.4rem;line-height:1.4">Random design decisions</div>
         </div>
       </div>
+<script>
+(function(){
+  var wrap = document.getElementById('illus-wrap');
+  var badge = document.getElementById('illus-credit');
+  if(!wrap || !badge) return;
+  var mx = 0, my = 0, bx = 0, by = 0, raf = null;
+  badge.style.transition = 'opacity .35s ease';
+  function lerp(a,b,t){ return a + (b-a)*t; }
+  function loop(){
+    bx = lerp(bx, mx, 0.1);
+    by = lerp(by, my, 0.1);
+    badge.style.left = bx + 'px';
+    badge.style.top  = by + 'px';
+    raf = requestAnimationFrame(loop);
+  }
+  document.addEventListener('mousemove', function(e){
+    mx = e.clientX + 20;
+    my = e.clientY + 20;
+  });
+  wrap.addEventListener('mouseenter', function(){
+    badge.style.opacity = '1';
+    badge.style.transform = 'scale(1)';
+    if(!raf) loop();
+  });
+  wrap.addEventListener('mouseleave', function(){
+    badge.style.opacity = '0';
+    badge.style.transform = 'scale(0.95)';
+    cancelAnimationFrame(raf); raf = null;
+  });
+})();
+</script>
     </div>
   </section>
 
@@ -1477,13 +1537,12 @@ function closeC(){
 
 function sw(){var w=document.getElementById('work');if(w)w.scrollIntoView({behavior:'smooth',block:'start'})}
 
-// Bubble physics
+// Bubble physics removed — illustration used instead
 (function(){
   var activeRaf = null;
 
   function startBubbles(){
-    if(activeRaf){ cancelAnimationFrame(activeRaf); activeRaf=null; }
-
+    return; // no-op
     var container = document.getElementById('hero-bubbles');
     if(!container) return;
     var els = Array.from(container.querySelectorAll('.hbubble'));
